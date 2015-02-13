@@ -1,5 +1,5 @@
 /**
- * Global JavaScript for Example Plugin
+ * Global JavaScript for ExamplePlugin
  *
  * Includes all JS which is required within all sections of the plugin.
  */

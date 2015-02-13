@@ -2,12 +2,13 @@
   "name": "example-plugin",
   "lowername": "example plugin",
   "capitalname": "Example Plugin",
+  "packname": "ExamplePlugin",
   "constname": "EXAMPLE_PLUGIN",
   "classname": "Example_Plugin",
   "funcname": "example_plugin",
   "camelname": "examplePlugin",
   "version": "0.0.1",
-  "copyright": "2014",
+  "copyright": "2015",
   "license": "GPL-2.0+",
   "private": true,
   "bugs": {
@@ -25,7 +26,7 @@
     }
   ],
   "plugin": {
-    "name": "Example Plugin",
+    "name": "ExamplePlugin",
     "uri": "http://www.wpsitecare.com/example-plugin/",
     "description": "An example plugin.",
     "author": "WP Site Care",
@@ -59,6 +60,7 @@
     "grunt-contrib-cssmin": "^0.12.0",
     "grunt-contrib-imagemin": "^0.9.2",
     "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-rename": "0.0.3",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
