@@ -1,6 +1,6 @@
 <?php
 /**
- * Walkie Talkie main plugin class.
+ * Example Plugin main plugin class.
  *
  * @package     ExamplePlugin
  * @author      Robert Neu
@@ -20,8 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Example_Plugin {
 
 	// Class properties
+	public $scripts;
+
 	public $admin_page;
-	public $admin_scripts;
+
+	public $setttings_general;
 
 	/**
 	 * Method to initialize the plugin.
@@ -30,10 +33,6 @@ class Example_Plugin {
 	 * @return void
 	 */
 	public function run() {
-		// Return early if we're no in the WordPress admin panel.
-		if ( ! is_admin() ) {
-			return;
-		}
 		$this->load_textdomain();
 		$this->includes();
 		$this->instantiate();
@@ -62,10 +61,16 @@ class Example_Plugin {
 	 * @return void
 	 */
 	private function includes() {
-		require_once EXAMPLE_PLUGIN_DIR . 'includes/class-admin-page.php';
-		require_once EXAMPLE_PLUGIN_DIR . 'includes/class-admin-scripts.php';
-		require_once EXAMPLE_PLUGIN_DIR . 'includes/class-mandrill.php';
-		require_once EXAMPLE_PLUGIN_DIR . 'includes/class-snapshot.php';
+		$includes_dir = EXAMPLE_PLUGIN_DIR . 'includes/';
+		require_once $includes_dir . 'admin/settings/class-settings-base.php';
+		require_once $includes_dir . 'admin/settings/class-settings-general.php';
+		require_once $includes_dir . 'class-scripts.php';
+		// Bail here if we're not in the admin panel.
+		if ( ! is_admin() ) {
+			return;
+		}
+		require_once $includes_dir . 'admin/class-admin-scripts.php';
+		require_once $includes_dir . 'admin/settings/class-settings-page.php';
 	}
 
 	/**
@@ -76,28 +81,20 @@ class Example_Plugin {
 	 * @return void
 	 */
 	public function instantiate() {
-		$this->admin_page    = new Example_Plugin_Admin_Page;
-		$this->admin_scripts = new Example_Plugin_Admin_Scripts;
-		$this->admin_page->run();
-		$this->admin_scripts->run();
-	}
+		$this->scripts = new Example_Plugin_Scripts;
 
-	/**
-	 * Helper function to determine if we're on the right page.
-	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @return bool
-	 */
-	public function is_admin_page() {
-		if ( ! function_exists( 'get_current_screen' ) ) {
-			return false;
+		$this->scripts->run();
+		// Bail here if we're not in the admin panel.
+		if ( ! is_admin() ) {
+			return;
 		}
-		// Return true if we're on a single edit post screen.
-		if ( 'toplevel_page_example-plugin' === get_current_screen()->base ) {
-			return true;
-		}
-		return false;
+		$this->admin_scripts    = new Example_Plugin_Admin_Scripts;
+		$this->settings_general = new Example_Plugin_Settings_General;
+		$this->admin_page       = new Example_Plugin_Settings_Page;
+
+		$this->admin_scripts->run();
+		$this->settings_general->run();
+		$this->admin_page->run();
 	}
 
 }

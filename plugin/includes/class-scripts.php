@@ -1,6 +1,6 @@
 <?php
 /**
- * Walkie Talkie Dashboard class.
+ * Example Plugin scripts class.
  *
  * @package     ExamplePlugin
  * @author      Robert Neu
@@ -15,17 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Our Example_Plugin_Scripts class which registers all admin styles and scripts.
+ * Our Example_Plugin_Scripts class to register front-end styles and scripts.
  *
  * @package Example_Plugin
  * @version 0.0.1
  */
-class Example_Plugin_Admin_Scripts {
+class Example_Plugin_Scripts {
 
-	private $css_uri;
-
-	private $js_uri;
-
+	/**
+	* A script prefix to load minified scripts and styles unless debugging.
+	*
+	* @since  0.0.1
+	* @var   string
+	*/
 	private $prefix;
 
 	/**
@@ -36,9 +38,7 @@ class Example_Plugin_Admin_Scripts {
 	* @return void
 	*/
 	public function run() {
-		$this->css_uri = EXAMPLE_PLUGIN_URL . 'assets/css/';
-		$this->js_uri  = EXAMPLE_PLUGIN_URL . 'assets/js/';
-		$this->prefix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$this->prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		self::wp_hooks();
 	}
 
@@ -50,43 +50,37 @@ class Example_Plugin_Admin_Scripts {
 	* @return void
 	*/
 	public function wp_hooks() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
 	}
 
 	/**
-	 * Load admin styles for Walkie Talkie.
+	 * Load front-end styles for Example Plugin.
 	 *
 	 * @since   0.0.1
 	 * @access  public
 	 * @return  void
 	 */
-	function admin_styles() {
-		if ( ! example_plugin()->is_admin_page() ) {
-			return;
-		}
+	function styles() {
 		wp_enqueue_style(
 			'example-plugin',
-			$this->css_uri . "example-plugin{$this->prefix}.css",
+			EXAMPLE_PLUGIN_URL . "css/example-plugin{$this->prefix}.css",
 			null,
 			'0.0.1'
 		);
 	}
 
 	/**
-	 * Load admin scripts for Walkie Talkie.
+	 * Load front-end scripts for Example Plugin.
 	 *
 	 * @since   0.0.1
 	 * @access  public
 	 * @return  void
 	 */
-	function admin_scripts() {
-		if ( ! example_plugin()->is_admin_page() ) {
-			return;
-		}
+	function scripts() {
 		wp_enqueue_script(
 			'example-plugin',
-			$this->js_uri . "example-plugin{$this->prefix}.js",
+			EXAMPLE_PLUGIN_URL . "js/example-plugin{$this->prefix}.js",
 			array( 'jquery' ),
 			'0.0.1',
 			true

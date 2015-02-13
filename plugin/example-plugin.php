@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:  Example Plugin
+ * Plugin Name:  ExamplePlugin
  * Plugin URI:   http://www.wpsitecare.com/example-plugin/
  * Description:  Example plugin description.
  * Version:      0.0.1
