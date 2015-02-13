@@ -1,0 +1,86 @@
+{
+  "name": "example-plugin",
+  "lowername": "example plugin",
+  "capitalname": "Example Plugin",
+  "constname": "EXAMPLE_PLUGIN",
+  "classname": "Example_Plugin",
+  "funcname": "example_plugin",
+  "camelname": "examplePlugin",
+  "version": "0.0.1",
+  "copyright": "2014",
+  "license": "GPL-2.0+",
+  "private": true,
+  "bugs": {
+    "url": "http://www.wpsitecare.com/support",
+    "email": "support@wpsitecare.com"
+  },
+  "contributors": [
+    {
+      "name": "WP Site Care",
+      "url": "http://www.wpsitecare.com"
+    },
+    {
+      "name": "Robert Neu",
+      "url": "http://www.wpsitecare.com"
+    }
+  ],
+  "plugin": {
+    "name": "Example Plugin",
+    "uri": "http://www.wpsitecare.com/example-plugin/",
+    "description": "An example plugin.",
+    "author": "WP Site Care",
+    "authoruri": "http://www.wpsitecare.com",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "textdomain": "example-plugin",
+    "domainpath": "/languages"
+  },
+  "pot": {
+    "reportmsgidbugsto": "Robert Neu <translations@wpsitecare.com>",
+    "lasttranslator": "Robert Neu <translations@wpsitecare.com>",
+    "languageteam": "Robert Neu <translations@wpsitecare.com>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpsitecare/example-plugin.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.2.0",
+    "grunt-banner": "^0.3.1",
+    "grunt-bowercopy": "^1.2.0",
+    "grunt-bump": "0.1.0",
+    "grunt-checktextdomain": "^0.1.1",
+    "grunt-composer": "^0.4.4",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.12.0",
+    "grunt-contrib-imagemin": "^0.9.2",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-cssjanus": "^0.2.3",
+    "grunt-githooks": "^0.3.1",
+    "grunt-jsbeautifier": "^0.2.8",
+    "grunt-jscs": "^1.5.0",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-jsvalidate": "^0.2.2",
+    "grunt-mkdir": "^0.1.2",
+    "grunt-newer": "^1.1.0",
+    "grunt-phpcpd": "^0.1.4",
+    "grunt-phpcs": "^0.2.3",
+    "grunt-phplint": "0.0.5",
+    "grunt-phpmd": "^0.1.1",
+    "grunt-potomo": "^3.2.0",
+    "grunt-replace": "^0.8.0",
+    "grunt-scss-lint": "^0.3.4",
+    "grunt-wp-css": "^0.1.0",
+    "grunt-wp-i18n": "^0.5.0",
+    "load-grunt-config": "^0.16.0",
+    "semver": "^4.2.0",
+    "time-grunt": "^1.0.0"
+  }
+}

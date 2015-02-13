@@ -1,0 +1,334 @@
+/* Theme Icons
+--------------------------------------------- */
+// Links
+a[href^="mailto:"]::before,
+a[href^="tel:"]::before,
+
+// Menu
+.menu-button::before,
+
+// Search
+.search-form button::before,
+
+// Media player
+.mejs-controls .mejs-button button::after,
+.mejs-overlay-button::after,
+.media-info-toggle::after,
+
+// Playlists
+.wp-playlist-playing .wp-playlist-caption::before,
+.wp-playlist-item-meta::before,
+
+// Posts
+.entry-author a::before,
+.entry-published::before,
+.entry-comments-link::before,
+.post-edit-link::before,
+.entry-permalink::before,
+.post-format-link::before,
+.entry-terms::before,
+.image-sizes::before,
+.chat-author cite::before,
+.entry-views::before,
+
+// Author box
+.social-icons li a::before,
+
+// Comments
+.comment-published::before,
+.comment-edit-link::before,
+.comment-author::before,
+.comment-permalink::before,
+.comment-reply-link::before,
+.comment-reply-login::before,
+
+// Comments
+.comments-number::before,
+
+// Respond
+.comment-reply-title:before,
+.comment-respond label[for="author"]::before,
+.comment-respond label[for="email"]::before,
+.comment-respond label[for="url"]::before,
+.comment-respond label[for="comment"]::before {
+	display: inline-block;
+	font-family: "Genericons";
+	font-size: $secondary-font-size;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Theme Icon Padding
+---------------------- */
+a[href^="mailto:"]::before,
+a[href^="tel:"]::before,
+.entry-author a::before,
+.chat-author cite::before,
+.entry-published::before,
+.entry-comments-link::before,
+.post-edit-link::before,
+.entry-permalink::before,
+.post-format-link::before,
+.entry-terms::before,
+.image-sizes::before,
+.entry-views::before,
+.comment-published::before,
+.comment-edit-link::before,
+.comment-author::before,
+.comment-permalink::before {
+	padding-right: 3px;
+	padding-bottom: 2px;
+}
+
+/* Link Icons
+---------------------- */
+a[href^="mailto:"]::before {
+	content: "\f410";
+}
+
+a[href^="tel:"]::before {
+	content: "\f437";
+}
+
+/* Menu Icon
+---------------------- */
+.menu-button::before {
+	content: "\f419";
+}
+
+/* Search Icon
+---------------------- */
+.search-form button::before {
+	content: "\f400";
+}
+
+/* Post Icons
+---------------------- */
+.entry-author a::before,
+.chat-author cite::before {
+	content: "\f304";
+}
+
+.entry-published::before {
+	content: "\f307";
+}
+
+.entry-comments-link::before {
+	content: "\f300";
+}
+
+.post-edit-link::before {
+	content: "\f411";
+}
+
+.entry-permalink::before {
+	content: "\f107";
+}
+
+.entry-terms.post_tag::before {
+	content: "\f302";
+}
+
+.entry-terms.category::before {
+	content: "\f301";
+}
+
+.entry-terms.portfolio::before {
+	content: "\f460";
+}
+
+.format-standard .post-format-link::before {
+	content: "\f100";
+}
+
+.format-aside .post-format-link::before {
+	content: "\f101";
+}
+
+.format-audio .post-format-link::before {
+	content: "\f109";
+}
+
+.format-chat .post-format-link::before {
+	content: "\f108";
+}
+
+.format-gallery .post-format-link::before {
+	content: "\f103";
+}
+
+.image-sizes::before,
+.format-image .post-format-link::before {
+	content: "\f102";
+}
+
+.format-link .post-format-link::before {
+	content: "\f107";
+}
+
+.format-quote .post-format-link::before {
+	content: "\f106";
+}
+
+.format-status .post-format-link::before {
+	content: "\f105";
+}
+
+.format-video .post-format-link::before {
+	content: "\f104";
+}
+
+/* Author Box Icons
+---------------------- */
+.social-gplus a::before {
+	content: "\f206";
+}
+
+.social-twitter a::before {
+	content: "\f202";
+}
+
+.social-facebook a::before {
+	content: "\f203";
+}
+
+.social-rss a::before {
+	content: "\f413";
+}
+
+/* Entry View Icons
+---------------------- */
+.entry-views::before {
+	content: "\f403";
+}
+
+/* Comment Entry Icons
+---------------------- */
+.comment-published::before {
+	content: "\f303";
+}
+
+.comment-author::before {
+	content: "\f304";
+}
+
+.ping .comment-author::before {
+	content: "\f107";
+}
+
+.comment-edit-link::before {
+	content: "\f411";
+}
+
+.comment-permalink::before {
+	content: "\f107";
+}
+
+/* Comment Reply Icons
+---------------------- */
+.comment-reply-title::before {
+	content: "\f412";
+	padding: 0 3px 1px 0;
+}
+
+.comment-reply-link::before,
+.comment-reply-login::before {
+	content: "\f412";
+	margin-bottom: 3px;
+	padding-right: 5px;
+}
+
+.comment-respond label[for="author"]::before,
+.comment-respond label[for="email"]::before,
+.comment-respond label[for="url"]::before,
+.comment-respond label[for="comment"]::before {
+	margin-bottom: 3px;
+	padding: 0 5px;
+	color: $comments-font-color;
+}
+
+.comment-respond label[for="author"]::before {
+	content: "\f304";
+}
+
+.comment-respond label[for="email"]::before {
+	content: "\f410";
+}
+
+.comment-respond label[for="url"]::before {
+	content: "\f409";
+}
+
+.comment-respond label[for="comment"]::before {
+	content: "\f300";
+}
+
+/* Media Info Toggle Icon
+---------------------- */
+.media-info-toggle::after {
+	content: "\f431";
+	color: $media-info-toggle-color;
+	padding-left: 5px;
+	vertical-align: top;
+}
+
+.media-info-toggle.active::after {
+	content: "\f432";
+}
+
+/* Media Player Icons
+---------------------- */
+.mejs-button button::after {
+	color: $media-player-button-color;
+}
+
+.mejs-unmute button::after {
+	color: $media-player-unmute-button-color;
+}
+
+.mejs-fullscreen-button button::after {
+	content: "\f474";
+}
+
+.mejs-play button::after {
+	content: "\f452";
+}
+
+.mejs-pause button::after {
+	content: "\f448";
+}
+
+.mejs-volume-button button::after {
+	content: "\f109";
+}
+
+/* Media Playlist Icons
+---------------------- */
+.wp-playlist-playing .wp-playlist-caption::before {
+	content: "\f452";
+}
+
+.wp-playlist-current-item .wp-playlist-item-title::before {
+	content: "\f109";
+}
+
+.wp-playlist-current-item .wp-playlist-item-album::before {
+	content: "\f460";
+}
+
+.wp-playlist-current-item .wp-playlist-item-artist::before {
+	content: "\f304";
+}
+
+.wp-playlist-playing .wp-playlist-caption::before,
+.wp-playlist-item-meta::before {
+	padding-bottom: 2px;
+}
+
+.wp-playlist-item-meta::before {
+	padding-right: 3px;
+}

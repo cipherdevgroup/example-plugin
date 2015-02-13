@@ -1,0 +1,23 @@
+.footer {
+	background-color: $footer-background-color;
+	font-size: $secondary-font-size;
+	line-height: 1;
+	padding: 40px 0;
+	text-align: center;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	a {
+		color: $footer-link-color;
+
+		&:hover {
+			color: $footer-link-hover-color;
+		}
+	}
+
+	.wp-caption {
+		border: 1px solid $footer-border-color;
+	}
+}

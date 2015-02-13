@@ -1,0 +1,172 @@
+// This file controls all base color styles for our plugin. All colors should be
+// defined in _colors.scss. This allows us to at a glance determine global color
+// styles of our plugin and prevents arbitrary color assignment.
+// Do not use the base plugin colors in the scss partial files! Set up your plugin's
+// base colors and then use scoped color values in your Sass partials.
+
+// Theme Colors (private vars)
+//------------------------------------------------------------------------------
+$off-black:   #1c1e1f;
+$dark-gray:   #494b4c;
+$medium-gray: #676869;
+$light-gray:  #a4a5a5;
+$fog:         #ccc;
+$medium-fog:  #e0e0e0;
+$light-fog:   #f5f5f5;
+$white:       #fff;
+$seafoam:     #33b787;
+$green:       #00a66c;
+
+// Global Base Colors
+//------------------------------------------------------------------------------
+$base-background-color:                $light-fog;
+$base-font-color:                      $dark-gray;
+$base-accent-color:                    $light-gray;
+$base-heading-color:                   $off-black;
+$base-heading-hover-color:             $green;
+$base-blockquote-color:                $medium-gray;
+$base-link-color:                      $green;
+$base-link-hover-color:                lighten($seafoam, 10);
+$base-button-background-color:         $seafoam;
+$base-button-background-hover-color:   lighten($base-button-background-color, 10);
+$base-button-font-color:               $white;
+$base-button-font-hover-color:         $white;
+$base-border-color:                    $medium-fog;
+$base-selection-background-color:      $off-black;
+$base-selection-color:                 $white;
+$base-insert-color:                    lighten($seafoam, 45);
+$cta-background-color:                 $dark-gray;
+
+// Form Colors
+//------------------------------------------------------------------------------
+$input-background-color:    $white;
+$form-font-color:           $base-font-color;
+$form-border-color:         $base-border-color;
+$form-border-color-hover:   darken($base-border-color, 5);
+$form-border-color-focus:   darken($base-border-color, 20);
+$form-placeholder-color:    darken($base-border-color, 10);
+
+// Header Colors
+//------------------------------------------------------------------------------
+$header-background-color:  $off-black;
+$header-font-color:        $fog;
+$header-link-color:        $white;
+
+// Navigation Colors
+//------------------------------------------------------------------------------
+$nav-background-color:           $white;
+$nav-border-color:               $base-border-color;
+$nav-link-color:                 $dark-gray;
+$nav-link-hover-color:           $base-link-color;
+
+$menu-header-border-color:       $base-border-color;
+$menu-header-color:              $light-gray;
+$menu-header-hover-color:        $base-link-color;
+
+$after-header-background-color:  $nav-background-color;
+$after-header-border-color:      $base-border-color;
+$after-header-link-color:        lighten($nav-link-color, 10);
+$after-header-link-hover-color:  $base-link-color;
+
+$menu-button-background-color:   $base-button-background-color;
+$menu-button-link-color:         $white;
+$sidr-background-color:          lighten($off-black, 3);
+$sidr-border-color:              rgba(255, 255, 255, 0.1);
+$sidr-color:                     lighten($nav-link-color, 30);
+$sidr-hover-color:               $base-link-color;
+$sidr-subnav-color:              lighten($nav-link-color, 15);
+
+// Pagination Colors
+//------------------------------------------------------------------------------
+$pagination-background-color:          lighten($light-fog, 2);
+$pagination-background-hover-color:    lighten($pagination-background-color, 5);
+$pagination-current-background-color:  darken($pagination-background-color, 5);
+$pagination-link-color:                $base-font-color;
+$pagination-border-color:              $base-border-color;
+$pagination-border-hover-color:        lighten($pagination-border-color, 3);
+
+$nav-single-background-color:          $pagination-background-color;
+$nav-single-background-hover-color:    $pagination-background-hover-color;
+$nav-single-link-color:                $pagination-link-color;
+$nav-single-border-color:              $pagination-border-color;
+$nav-single-border-hover-color:        $pagination-border-hover-color;
+
+$page-links-background-color:          $pagination-background-color;
+$page-links-background-hover-color:    $pagination-background-hover-color;
+$page-links-current-background-color:  $pagination-current-background-color;
+$page-links-link-color:                $pagination-link-color;
+$page-links-border-color:              $pagination-border-color;
+$page-links-border-hover-color:        $pagination-border-hover-color;
+
+//* Entry Colors
+//------------------------------------------------------------------------------
+$entry-background-color:            $white;
+$entry-border-color:                $base-border-color;
+$entry-sticky-border-color:         $dark-gray;
+$blockquote-border-color:           $light-fog;
+$table-border-color:                $base-border-color;
+$code-background-color:             $light-fog;
+$code-border-color:                 darken($base-border-color, 10);
+$code-font-color:                   $off-black;
+$entry-meta-font-color:             $medium-gray;
+$entry-meta-link-color:             $medium-gray;
+$entry-meta-link-hover-color:       $base-link-color;
+$entry-meta-link-border-color:      $base-link-color;
+$featured-media-background-color:   $medium-fog;
+$corner-ribbon-background-color:    $base-accent-color;
+$corner-ribbon-font-color:          $white;
+$gallery-caption-background-color:  $off-black;
+$gallery-caption-font-color:        $white;
+
+//* Author Box Colors
+//------------------------------------------------------------------------------
+$author-box-background-color: $white;
+$author-box-border-color:     $base-border-color;
+
+//* Icon Colors
+//------------------------------------------------------------------------------
+$media-info-toggle-color:           $light-fog;
+$media-player-button-color:         $white;
+$media-player-unmute-button-color:  $dark-gray;
+
+//* Coment Section Colors
+//------------------------------------------------------------------------------
+$comments-background-color:                  $white;
+$comments-font-color:                        $base-font-color;
+$comment-background-color:                   lighten($light-fog, 3);
+$comment-border-color:                       $base-border-color;
+$comment-meta-link-color:                    $entry-meta-link-color;
+$comment-meta-link-hover-color:              $entry-meta-link-hover-color;
+$comment-meta-link-border-color:             $entry-meta-link-border-color;
+$comment-table-background-color:             $white;
+$comment-reply-link-background-color:        $light-fog;
+$comment-reply-link-background-hover-color:  $white;
+$comment-reply-link-color:                   $base-font-color;
+$comment-reply-link-hover-color:             $base-link-color;
+$allowed-tags-background-color:              $light-fog;
+
+//* Base Widget Colors
+//------------------------------------------------------------------------------
+$widget-background-color:  $white;
+$widget-link-color:        $medium-gray;
+
+//* Footer Widgets Colors
+//------------------------------------------------------------------------------
+$footer-widgets-background-color:               $dark-gray;
+$footer-widgets-font-color:                     $light-fog;
+$footer-widgets-heading-color:                  $white;
+$footer-widgets-link-color:                     $medium-fog;
+$footer-widgets-link-hover-color:               $base-link-color;
+$footer-widgets-link-border-color:              $base-link-color;
+$footer-widgets-border-color:                   $off-black;
+$footer-widgets-button-background-color:        $base-button-background-color;
+$footer-widgets-button-font-color:              $base-button-font-color;
+$footer-widgets-button-background-hover-color:  $base-button-background-hover-color;
+$footer-widgets-button-font-hover-color:        $base-button-font-hover-color;
+
+//* Footer Colors
+//------------------------------------------------------------------------------
+$footer-background-color:  $white;
+$footer-border-color:      $base-border-color;
+$footer-link-color:        $base-link-color;
+$footer-link-hover-color:  $base-link-hover-color;

@@ -1,0 +1,46 @@
+/* Box Sizing
+--------------------------------------------- */
+
+*,
+input[type="search"] {
+	box-sizing: border-box;
+}
+
+/* Float Clearing
+--------------------------------------------- */
+
+.author-box:before,
+.clearfix:before,
+.entry:before,
+.entry-content:before,
+.footer:before,
+.footer-widgets:before,
+.header:before,
+.pagination:before,
+.site-container:before,
+.site-inner:before,
+.wrap:before {
+	content: " ";
+	display: table;
+}
+
+.author-box:after,
+.clearfix:after,
+.entry:after,
+.entry-content:after,
+.footer:after,
+.footer-widgets:after,
+.header:after,
+.pagination:after,
+.site-container:after,
+.site-inner:after,
+.wrap:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
