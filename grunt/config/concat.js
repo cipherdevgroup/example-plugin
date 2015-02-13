@@ -2,11 +2,14 @@
 module.exports = {
 	js: {
 		src: [
-			'<%= paths.bower %>fitvids/js/jquery.fitvids.js',
-			'<%= paths.bower %>accessible-menu/js/jquery.accessible-menu.js',
-			'<%= paths.bower %>sidr/js/jquery.sidr.min.js',
 			'<%= paths.authorAssets %>js/example-plugin.js'
 		],
 		dest: '<%= paths.plugin %>js/example-plugin.js'
+	},
+	adminjs: {
+		src: [
+			'<%= paths.authorAssets %>js/example-plugin-admin.js'
+		],
+		dest: '<%= paths.plugin %>js/example-plugin-admin.js'
 	}
 };
