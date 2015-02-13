@@ -72,7 +72,7 @@ commit:
 default:
   - watch
 newplugin:
-  - 'rename:packagename'
+  - 'copy:packagename'
   - 'replace:packagename'
   - 'readpkg'
   - 'build'
