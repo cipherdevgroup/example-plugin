@@ -47,8 +47,8 @@ class Example_Plugin_Settings_Page {
 	 */
 	public function register_menus() {
 		add_options_page(
-			__( 'Example Plugin', 'example-plugin' ),
-			__( 'Example Plugin', 'example-plugin' ),
+			__( 'ExamplePlugin', 'example-plugin' ),
+			__( 'ExamplePlugin', 'example-plugin' ),
 			'manage_options',
 			example_plugin()->key,
 			array( $this, 'settings_page' )
@@ -73,7 +73,7 @@ class Example_Plugin_Settings_Page {
 		// Grab the settings key to be passed into the template.
 		$key = example_plugin()->key;
 
-		require_once RICH_RECIPES_DIR . 'templates/admin/settings-page.php';
+		require_once EXAMPLE_PLUGIN_DIR . 'templates/admin/settings-page.php';
 	}
 
 	/**
@@ -85,6 +85,24 @@ class Example_Plugin_Settings_Page {
 	 */
 	private function get_tabs() {
 		return apply_filters( 'example_plugin_settings_tabs', array() );
+	}
+
+	/**
+	 * Helper function to determine if we're on the right page.
+	 *
+	 * @since  1.0.0
+	 * @access private
+	 * @return bool
+	 */
+	public function is_admin_page() {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return false;
+		}
+		// Return true if we're on a single edit post screen.
+		if ( 'toplevel_page_example-plugin' === get_current_screen()->base ) {
+			return true;
+		}
+		return false;
 	}
 
 }

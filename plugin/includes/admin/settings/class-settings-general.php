@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base  {
+class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 
 	/**
 	* Get things running!
@@ -38,7 +38,6 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base  {
 	 */
 	protected function wp_hooks() {
 		parent::wp_hooks();
-		add_action( 'admin_init',        array( $this, 'process_license'   ) );
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Rich Rcipes Base Settings Class.
+ * Example Plugin Base Settings Class.
  *
  * @package     ExamplePlugin
  * @author      Robert Neu
