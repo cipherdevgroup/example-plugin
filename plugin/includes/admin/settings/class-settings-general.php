@@ -19,7 +19,7 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 	/**
 	* Get things running!
 	*
-	* @since  1.0.0
+	* @since  0.0.1
 	* @access public
 	* @return void
 	*/
@@ -32,7 +32,7 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 	 * Hook into WordPress. This also calls the base class' wp_hooks method to
 	 * make sure the plugin settings are registered correctly.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access private
 	 * @return void
 	 */
@@ -45,7 +45,7 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 	 * priority extremely low to prevent additional settings from being
 	 * registered before our general plugin settings.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access private
 	 * @return void
 	 */
@@ -57,7 +57,7 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 	/**
 	 * Retrieve the array of plugin settings
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access public
 	 * @return array
 	*/
@@ -86,7 +86,7 @@ class Example_Plugin_Settings_General extends Example_Plugin_Settings_Base {
 	/**
 	* Add the general settings tab into the array of available settings tabs.
 	*
-	* @since  1.0.0
+	* @since  0.0.1
 	* @access public
 	* @param  $tabs array of tab areas
 	* @return $tabs array of updated tab areas

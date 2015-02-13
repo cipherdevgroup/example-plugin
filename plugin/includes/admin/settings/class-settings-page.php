@@ -19,7 +19,7 @@ class Example_Plugin_Settings_Page {
 	/**
 	* Get things running!
 	*
-	* @since  1.0.0
+	* @since  0.0.1
 	* @access public
 	* @return void
 	*/
@@ -30,7 +30,7 @@ class Example_Plugin_Settings_Page {
 	/**
 	 * Hook into WordPress.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access public
 	 * @return void
 	 */
@@ -41,7 +41,7 @@ class Example_Plugin_Settings_Page {
 	/**
 	 * Register our settings page.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access public
 	 * @return void
 	 */
@@ -60,7 +60,7 @@ class Example_Plugin_Settings_Page {
 	 *
 	 * Renders the options page contents.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access public
 	 * @return void
 	 */
@@ -79,7 +79,7 @@ class Example_Plugin_Settings_Page {
 	/**
 	 * Retrieve settings tabs
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access private
 	 * @return array $tabs
 	 */
@@ -90,7 +90,7 @@ class Example_Plugin_Settings_Page {
 	/**
 	 * Helper function to determine if we're on the right page.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @access private
 	 * @return bool
 	 */

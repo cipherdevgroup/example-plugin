@@ -42,7 +42,7 @@ abstract class Example_Plugin_Settings_Base {
 	/**
 	 * Get the value of a specific setting.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  $key string the key of the desired settings option
 	 * @param  $default bool the default value of the desired settings option
 	 * @return mixed
@@ -55,7 +55,7 @@ abstract class Example_Plugin_Settings_Base {
 	/**
 	 * Get all settings
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @return array
 	*/
 	public function get_all() {
@@ -65,7 +65,7 @@ abstract class Example_Plugin_Settings_Base {
 	/**
 	 * Retrieve the array of plugin settings
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @return array
 	*/
 	function get_registered_settings() {
@@ -75,7 +75,7 @@ abstract class Example_Plugin_Settings_Base {
 	/**
 	 * Add all settings sections and fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @return void
 	*/
 	public function register_settings() {
@@ -127,7 +127,7 @@ abstract class Example_Plugin_Settings_Base {
 	/**
 	 * Retrieve the array of plugin settings.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @return array
 	*/
 	public function sanitize_settings( $input = array() ) {
@@ -224,7 +224,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders the header.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @return void
 	 */
@@ -237,7 +237,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders checkboxes.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -255,7 +255,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders multiple checkboxes.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -285,7 +285,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders radio boxes.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -314,7 +314,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders text fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -338,7 +338,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders license key fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -378,7 +378,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders number fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -406,7 +406,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders number fields for setting the dimensions of an image.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -435,7 +435,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders textarea fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -459,7 +459,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders password fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -483,7 +483,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * If a function is missing for settings callbacks alert the user.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @return void
 	 */
@@ -496,7 +496,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders select fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @return void
@@ -526,7 +526,7 @@ abstract class Example_Plugin_Settings_Base {
 	 *
 	 * Renders rich editor fields.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.1
 	 * @param  array $args Arguments passed by the setting
 	 * @global $this->options Array of all the Rich_Recipes Options
 	 * @global $wp_version WordPress Version

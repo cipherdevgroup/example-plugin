@@ -20,7 +20,8 @@ register_activation_hook( EXAMPLE_PLUGIN_FILE, 'example_plugin_install' );
  *
  * Runs on plugin install to set up options and required plugin data.
  *
- * @since  1.0.0
+ * @since  0.0.1
+ * @access public
  * @return void
  */
 function example_plugin_install() {
@@ -55,7 +56,8 @@ register_deactivation_hook( EXAMPLE_PLUGIN_FILE, 'example_plugin_deactivate' );
  *
  * Runs on plugin deactivation to remove unnecessary options and data.
  *
- * @since  1.0.0
+ * @since  0.0.1
+ * @access public
  * @return void
  */
 function example_plugin_deactivate() {
