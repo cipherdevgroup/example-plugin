@@ -1,15 +1,11 @@
 {
   "name": "example-plugin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {},
   "devDependencies": {
     "bourbon": "~4.1",
     "neat": "~1.7",
-    "genericons": "Automattic/Genericons#master",
-    "wp-normalize.scss": "~1.0",
-    "fitvids": "~1.1",
-    "accessible-menu": "GaryJones/accessible-menu#master",
-    "sidr": "~1.2"
+    "wp-normalize.scss": "~1.0"
   }
 }
