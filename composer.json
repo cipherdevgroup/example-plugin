@@ -1,7 +1,7 @@
 {
   "name": "wpsitecare/example-plugin",
   "description": "An example plugin description.",
-  "keywords": ["wordpress", "plugin", "flagship"],
+  "keywords": ["wordpress", "plugin"],
   "homepage": "http://www.wpsitecare.com",
   "type": "wordpress-plugin",
   "license": "GPL-2.0+",
