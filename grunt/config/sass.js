@@ -12,7 +12,7 @@ module.exports = {
 			{
 				expand: true,
 				cwd: '<%= paths.authorAssets %>scss/',
-				src: 'example-plugin.scss',
+				src: '*.scss',
 				dest: '<%= paths.tmp %>',
 				ext: '.css'
 			}
