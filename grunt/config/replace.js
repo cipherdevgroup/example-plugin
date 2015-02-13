@@ -45,8 +45,12 @@ module.exports = {
 					replacement: '<%= pkg.lowername %>'
 				},
 				{
-					match: /Example Plugin/g,
+					match: /ExamplePlugin/g,
 					replacement: '<%= pkg.capitalname %>'
+				},
+				{
+					match: /ExamplePlugin/g,
+					replacement: '<%= pkg.packname %>'
 				},
 				{
 					match: /EXAMPLE_PLUGIN/g,
