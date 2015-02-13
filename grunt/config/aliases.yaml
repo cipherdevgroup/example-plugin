@@ -11,16 +11,15 @@ build:
 # Build dependencies
 'build:dependencies':
   - 'build:dependencies:css'
-  - 'build:dependencies:js'
+#  - 'build:dependencies:js'
   - 'build:dependencies:php'
 'build:dependencies:css':
   - 'clean:css'
   - 'bowercopy:css'
-  - 'newer:copy:vendorcss'
-'build:dependencies:js':
-  - 'bowercopy:js'
 'build:dependencies:php':
   - 'composer:install'
+#'build:dependencies:js':
+#  - 'bowercopy:js'
 # Build CSS from Scss to production
 'build:css':
   - 'clean:style'
@@ -41,11 +40,11 @@ build:
 'build:images':
   - 'newer:imagemin'
   - 'newer:copy:images'
-  - 'newer:copy:screenshot'
 # Build JavaScript from assets to production
 'build:js':
   - 'clean:js'
   - 'newer:concat:js'
+  - 'newer:concat:adminjs'
   - 'newer:uglify'
   - 'newer:jsvalidate:plugin'
 # Build internationalization features
@@ -72,7 +71,7 @@ commit:
 default:
   - watch
 newplugin:
-  - 'copy:packagename'
+  - 'rename:packagename'
   - 'replace:packagename'
   - 'readpkg'
   - 'build'
