@@ -188,11 +188,7 @@ abstract class Example_Plugin_Settings_Base {
 			$input[ $key ] = apply_filters( 'example_plugin_settings_sanitize', $value, $key );
 		}
 
-		//wp_die( var_dump( $_POST ) );
-
-		if ( ! isset( $_POST['example_plugin_activate_license'] ) && ! isset( $_POST['example_plugin_deactivate_license'] ) ) {
-			add_settings_error( 'example-plugin-notices', '', esc_attr__( 'Settings updated.', 'example-plugin' ), 'updated' );
-		}
+		add_settings_error( 'example-plugin-notices', '', esc_attr__( 'Settings updated.', 'example-plugin' ), 'updated' );
 
 		return array_merge( $saved, $input );
 
@@ -329,46 +325,6 @@ abstract class Example_Plugin_Settings_Base {
 		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 		$html = '<input type="text" class="' . $size . '-text" id="example_plugin_settings[' . $args['id'] . ']" name="example_plugin_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
 		$html .= '<label for="example_plugin_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
-
-		echo $html;
-	}
-
-	/**
-	 * License Callback
-	 *
-	 * Renders license key fields.
-	 *
-	 * @since  0.0.1
-	 * @param  array $args Arguments passed by the setting
-	 * @global $this->options Array of all the Rich_Recipes Options
-	 * @return void
-	 */
-	public function license_callback( $args ) {
-		$value = isset( $args['std'] ) ? $args['std'] : '';
-
-		if ( isset( $this->options[ $args['id'] ] ) ) {
-			$value = $this->options[ $args['id'] ];
-		}
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="password" class="' . $size . '-text" id="example_plugin_settings[' . $args['id'] . ']" name="example_plugin_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
-		$license_status = $this->get( 'license_status' );
-		$license_key = ! empty( $value ) ? $value : false;
-
-		if ( 'valid' === $license_status && ! empty( $license_key ) ) {
-			$html .= '<input type="submit" class="button" name="example_plugin_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'example-plugin' ) . '"/>';
-			$html .= '<span style="color:green;">&nbsp;' . esc_attr__( 'Your license is valid!', 'example-plugin' ) . '</span>';
-		}
-		if ( 'expired' === $license_status && ! empty( $license_key ) ) {
-			$renewal_url = add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => 17 ), 'https://richrecipesplugin.com/checkout' );
-			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="button-primary">' . esc_attr__( 'Renew Your License', 'example-plugin' ) . '</a>';
-			$html .= '<br/><span style="color:red;">&nbsp;' . esc_attr__( 'Your license has expired, renew today to continue getting updates and support!', 'example-plugin' ) . '</span>';
-		}
-		if ( empty( $license_key ) || ( 'expired' !== $license_status && 'valid' !== $license_status ) ) {
-			$html .= '<input type="submit" class="button" name="example_plugin_activate_license" value="' . esc_attr__( 'Activate License', 'example-plugin' ) . '"/>';
-		}
-
-		$html .= '<br/><label for="example_plugin_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 		echo $html;
 	}
