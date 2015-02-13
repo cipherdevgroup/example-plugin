@@ -6,18 +6,7 @@ module.exports = {
 				cwd: '<%= paths.tmp %>',
 				expand: true,
 				flatten: true,
-				src: ['style*.css', 'style*.map'],
-				dest: '<%= paths.plugin %>',
-				filter: 'isFile'
-			}
-		]
-	},
-	vendorcss: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				src: [],
+				src: ['*.css', '*.map'],
 				dest: '<%= paths.plugin %>css/',
 				filter: 'isFile'
 			}
@@ -26,6 +15,7 @@ module.exports = {
 	font: {
 		files: [
 			{
+				cwd: '<%= paths.authorAssets %>font',
 				expand: true,
 				flatten: true,
 				src: [],
@@ -39,20 +29,8 @@ module.exports = {
 				cwd: '<%= paths.tmp %>images',
 				expand: true,
 				flatten: true,
-				src: ['*', '!screenshot.png'],
+				src: [],
 				dest: '<%= paths.plugin %>images',
-				filter: 'isFile'
-			}
-		]
-	},
-	screenshot: {
-		files: [
-			{
-				cwd: '<%= paths.tmp %>images',
-				expand: true,
-				flatten: true,
-				src: ['screenshot.png'],
-				dest: '<%= paths.plugin %>',
 				filter: 'isFile'
 			}
 		]
@@ -65,33 +43,6 @@ module.exports = {
 				src: ['*.po'],
 				dest: '<%= paths.plugin%><%= paths.languages %>',
 				filter: 'isFile'
-			}
-		]
-	},
-	packagename: {
-		files: [
-			{
-				expand: true,
-				dot: true,
-				src: [
-					'**',
-					'.*',
-					'!<%= paths.bower %>**/*',
-					'!<%= paths.composer %>**/*',
-					'!node_modules/**',
-					'!.sass-cache/**',
-					'!dist/**',
-					'!logs/**',
-					'!tmp/**',
-					'!*.sublime*',
-					'!.DS_Store'
-				],
-				dest: '/',
-				filter: 'isFile',
-				rename: function( dest, src ) {
-					'use strict';
-					return dest + src.replace( 'example-plugin','<%= pkg.name %>' );
-				}
 			}
 		]
 	}
