@@ -12,13 +12,12 @@
  * Domain Path:  /languages
  */
 
+// Define the plugin version.
+define( 'EXAMPLE_PLUGIN_VERSION', '0.0.1' );
+
 // Define the root plugin file.
 if ( ! defined( 'EXAMPLE_PLUGIN_FILE' ) ) {
 	define( 'EXAMPLE_PLUGIN_FILE', __FILE__ );
-}
-// Define the plugin version.
-if ( ! defined( 'EXAMPLE_PLUGIN_VERSION' ) ) {
-	define( 'EXAMPLE_PLUGIN_VERSION', '0.0.1' );
 }
 // Define the plugin folder path.
 if ( ! defined( 'EXAMPLE_PLUGIN_DIR' ) ) {
@@ -30,10 +29,10 @@ if ( ! defined( 'EXAMPLE_PLUGIN_URL' ) ) {
 }
 
 // Load the main plugin class.
-require_once( EXAMPLE_PLUGIN_DIR . 'includes/class-plugin.php' );
+require_once EXAMPLE_PLUGIN_DIR . 'includes/class-plugin.php';
 
 // Load activation and deactivation functionality.
-require_once( EXAMPLE_PLUGIN_DIR . 'includes/activate-deactivate.php' );
+require_once EXAMPLE_PLUGIN_DIR . 'includes/activate-deactivate.php';
 
 add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
 /**
