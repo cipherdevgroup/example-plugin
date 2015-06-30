@@ -15,13 +15,4 @@
 /tmp/
 
 # Third-party dependencies
-assets/bower/
-assets/composer/
-
-# Generated theme files
-/plugin/css
-/plugin/font
-/plugin/includes/vendor
-/plugin/images
-/plugin/js
-/plugin/languages
+includes/vendor/

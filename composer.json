@@ -1,25 +1,23 @@
 {
   "name": "wpsitecare/example-plugin",
-  "description": "An example plugin description.",
-  "keywords": ["wordpress", "plugin"],
-  "homepage": "http://www.wpsitecare.com",
+  "description": "An example plugin.",
   "type": "wordpress-plugin",
-  "license": "GPL-2.0+",
-  "authors": [
+  "homepage" : "http://www.wpsitecare.com",
+  "license" : "MIT",
+  "authors" : [
     {
-      "name": "Robert Neu",
-      "email": "rob@wpsitecare.com",
-      "homepage": "http://www.wpsitecare.com"
+      "name" : "Robert Neu",
+      "email" : "rob@wpsitecare.com",
+      "homepage" : "http://www.wpsitecare.com"
     }
   ],
-  "support": {
-    "issues": "https://github.com/wpsitecare/example-plugin/issues",
-    "forum": "http://community.wpsitecare.com/category/example-plugin"
+  "support" : {
+    "issues" : "https://github.com/wpsitecare/example-plugin/issues"
   },
   "config": {
-    "vendor-dir": "assets/composer"
+      "vendor-dir": "includes/vendor"
   },
   "require": {
-    "composer/installers": "~1.0"
+      "composer/installers": "~1.0"
   }
 }
