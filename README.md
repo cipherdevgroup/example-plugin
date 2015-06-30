@@ -5,7 +5,7 @@ An example plugin for WP Site Care projects.
 __Contributors:__ [Robert Neu](https://github.com/robneu)  
 __Requires:__ WordPress 4.1  
 __Tested up to:__ WordPress 4.2.2  
-__License:__ [MIT](http://www.gnu.org/licenses/gpl-2.0.html)  
+__License:__ [MIT](http://wpsitecare.mit-license.org/)  
 
 ## Description ##
 
