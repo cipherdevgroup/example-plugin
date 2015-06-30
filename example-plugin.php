@@ -4,10 +4,10 @@
  * Plugin URI:   https://github.com/wpsitecare/example-plugin/
  * Description:  An example plugin for WP Site Care projects.
  * Version:      0.1.0
- * Author:       Robert Neu
- * Author URI:   http://robneu.com
+ * Author:       WP Site Care
+ * Author URI:   http://www.wpsitecare.com
  * License:      MIT
- * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ * License URI:  http://wpsitecare.mit-license.org/
  * Text Domain:  example-plugin
  * Domain Path:  /languages
  */
