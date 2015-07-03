@@ -48,22 +48,6 @@ class Example_Plugin {
 	 */
 	private $url;
 
-	/**
-	 * The plugin scripts class object.
-	 *
-	 * @since 0.1.0
-	 * @var   object Example_Plugin_Scripts
-	 */
-	public $scripts;
-
-	/**
-	 * An empty placeholder for referencing the main plugin admin class.
-	 *
-	 * @since 0.1.0
-	 * @var   object Example_Plugin_Admin
-	 */
-	public $admin;
-
 	public function __construct() {
 		$this->dir = plugin_dir_path( __FILE__ );
 		$this->url = plugin_dir_url( __FILE__ );
@@ -76,11 +60,9 @@ class Example_Plugin {
 	 * @return void
 	 */
 	public function run() {
-		self::includes();
-		self::instantiate();
-		if ( is_admin() ) {
-			self::load_textdomain();
-		}
+		self::load_textdomain();
+		spl_autoload_register( array( $this, 'autoloader' ) );
+		self::instantiate( 'Example_Plugin_Factory' );
 	}
 
 	/**
@@ -143,19 +125,26 @@ class Example_Plugin {
 	}
 
 	/**
-	 * Require all plugin files.
+	 * Load all plugin classes when they're instantiated.
 	 *
 	 * @since  0.1.0
 	 * @access private
 	 * @return void
 	 */
-	private function includes() {
-		require_once $this->dir . 'includes/class-scripts.php';
-		if ( is_admin() ) {
-			require_once $this->dir . 'admin/class-init.php';
-		} else {
-			require_once $this->dir . 'includes/class-public-scripts.php';
+	protected function autoloader( $class ) {
+		$class = strtolower( str_replace( '_', '-', str_replace( __CLASS__ . '_', '', $class ) ) );
+		$file  = "{$this->dir}includes/class-{$class}.php";
+
+		if ( false !== strpos( $class, 'admin' ) ) {
+			$class = str_replace( 'admin-', '', $class );
+			$file  = "{$this->dir}admin/class-{$class}.php";
 		}
+
+		if ( file_exists( $file ) ) {
+			require_once $file;
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -166,12 +155,9 @@ class Example_Plugin {
 	 * @return void
 	 */
 	private function instantiate() {
-		if ( is_admin() ) {
-			$this->admin = new Example_Plugin_Admin;
-			$this->admin->run();
-		} else {
-			$this->scripts = new Example_Plugin_Public_Scripts;
-			$this->scripts->run();
+		if ( ! is_admin() ) {
+			$factory::build( 'public-scripts' );
+			$factory::get( 'public-scripts' )->run();
 		}
 	}
 
