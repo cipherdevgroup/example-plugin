@@ -36,7 +36,7 @@ linters:
       - 'scss/partials/_plugins.scss'
       - 'scss/partials/_jetpack.scss'
       - 'scss/partials/_sidebars.scss'
-      - 'scss/partials/_theme-icons.scss'
+      - 'scss/partials/_plugin-icons.scss'
       - 'scss/partials/_widgets.scss'
 
   SingleLinePerProperty:
