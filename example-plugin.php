@@ -18,17 +18,10 @@ defined( 'ABSPATH' ) || exit;
 // Load the main plugin class.
 require_once plugin_dir_path( __FILE__ ) . 'class-plugin.php';
 
-add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
 /**
- * Allow themes and plugins to access Example_Plugin methods and properties.
- *
- * Because we aren't using a singleton pattern for our main plugin class, we
- * need to make sure it's only instantiated once in our helper function.
- * If you need to access methods inside the plugin classes, use this function.
- *
- * Example:
- *
- * <?php example_plugin()->scripts; ?>
+ * Access a single instance of the main plugin class. Plugins and themes should
+ * use this function to access plugin properties and methods. It's also a good
+ * way to check whether or not the plugin is activated.
  *
  * @since  0.1.0
  * @access public
@@ -36,12 +29,17 @@ add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
  * @return object Example_Plugin A single instance of the main plugin class.
  */
 function example_plugin() {
-	static $plugin;
-	if ( null === $plugin ) {
-		$plugin = new Example_Plugin;
-	}
-	return $plugin;
+	return Example_Plugin::instance();
 }
+
+/**
+ * Hook the main plugin class instance into plugins_loaded.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return void
+ */
+add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
 
 /**
  * Register an activation hook to run all necessary plugin setup procedures.

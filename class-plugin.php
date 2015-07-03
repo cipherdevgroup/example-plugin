@@ -54,6 +54,25 @@ class Example_Plugin {
 	}
 
 	/**
+	 * Store a single instance of the main plugin class.
+	 *
+	 * This is primarily to prevent unwanted instances of the main class from
+	 * floating around in memory unnecessarily.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @uses   Example_Plugin
+	 * @return object Example_Plugin A single instance of the main plugin class.
+	 */
+	public static function instance() {
+		static $instance;
+		if ( null === $instance ) {
+			$instance = new self;
+		}
+		return $instance;
+	}
+
+	/**
 	 * Method to initialize the plugin.
 	 *
 	 * @since  0.1.0
