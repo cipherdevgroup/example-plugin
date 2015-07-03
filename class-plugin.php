@@ -147,7 +147,7 @@ class Example_Plugin {
 	 * Load all plugin classes when they're instantiated.
 	 *
 	 * @since  0.1.0
-	 * @access private
+	 * @access protected
 	 * @return void
 	 */
 	protected function autoloader( $class ) {
@@ -167,13 +167,14 @@ class Example_Plugin {
 	}
 
 	/**
-	 * Load all required files and get all of our classes running.
+	 * Store a reference to our classes and get them running.
 	 *
 	 * @since  0.1.0
-	 * @access public
+	 * @access protected
+	 * @param  $factory string the name of our factory class
 	 * @return void
 	 */
-	private function instantiate() {
+	protected function instantiate( $factory ) {
 		if ( ! is_admin() ) {
 			$factory::build( 'public-scripts' );
 			$factory::get( 'public-scripts' )->run();
