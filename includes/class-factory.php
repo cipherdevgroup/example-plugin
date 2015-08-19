@@ -13,37 +13,42 @@ defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Factory {
 
+	/**
+	 * The saved plugin objects.
+	 *
+	 * @since 0.1.0
+	 * @type object
+	 */
 	protected static $objects = array();
 
 	/**
-	 * Build a named multiton object and return it. Keep a reference when
-	 * building so we can reuse it later.
+	 * Build a named object and return it. Keep a reference when building
+	 * so we can reuse it later.
 	 *
-	 * If you pass something like "my object" or "my-object" to $object, the
-	 * Factory will instantiate "Example_Plugin_My_Object"
+	 * If you pass 'my-object' to $object, the Factory will instantiate
+	 * 'Example_Plugin_My_Object'.
 	 *
 	 * @param  string $object Object name.
 	 * @param  string $name Optional. Name of the object.
+	 * @param  array $args arguments to be passed to the class object
 	 * @throws InvalidArgumentException If the specified class does not exist.
 	 * @return mixed
 	 */
-	public static function build( $object, $name = 'canonical' ) {
+	public static function build( $object, $name = 'canonical', $args = array() ) {
 		if ( empty( self::$objects[ $object ] ) ) {
 			self::$objects[ $object ] = array();
 		}
 
-		$class_name = 'Example_Plugin_' . ucwords(
-			str_replace(
-				array( ' ', '-' ), '_', $object
-			)
-		);
+		$class_name = 'Example_Plugin_' . ucwords( str_replace( '-', '_', $object ) );
 
 		if ( ! class_exists( $class_name ) ) {
-			throw new InvalidArgumentException( 'No class exists for the "' . $object . '" object.' );
+			throw new InvalidArgumentException(
+				"No class exists for the '{$object}' object."
+			);
 		}
 
 		if ( empty( self::$objects[ $object ][ $name ] ) ) {
-			self::$objects[ $object ][ $name ] = new $class_name;
+			self::$objects[ $object ][ $name ] = new $class_name( $args );
 		}
 
 		return self::$objects[ $object ][ $name ];
@@ -54,10 +59,14 @@ class Example_Plugin_Factory {
 	 *
 	 * @param  string $object Object name.
 	 * @param  string $name Optional. Name of the object.
+	 * @param  array $args arguments to be passed to the class object
 	 * @return mixed
 	 */
-	public static function get( $object, $name = 'canonical' ) {
-		return self::$objects[ $object ][ $name ];
+	public static function get( $object, $name = 'canonical', $args = array() ) {
+		if ( isset( self::$objects[ $object ][ $name ] ) ) {
+			return self::$objects[ $object ][ $name ];
+		}
+		return self::build( $object, $name, $args );
 	}
 
 }
