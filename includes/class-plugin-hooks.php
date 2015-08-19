@@ -57,7 +57,7 @@ class Example_Plugin_Plugin_Hooks {
 	 * @param  bool $network_wide True if superadmin uses "Network Activate".
 	 * @return void
 	 */
-	public function activate( $network_wide ) {
+	public function activate( $network_wide = false ) {
 		$this->handle_action( 'activate', $network_wide );
 	}
 
@@ -69,7 +69,7 @@ class Example_Plugin_Plugin_Hooks {
 	 * @param  bool $network_wide True if superadmin uses "Network Deactivate".
 	 * @return void
 	 */
-	public function deactivate( $network_wide ) {
+	public function deactivate( $network_wide  = false ) {
 		$this->handle_action( 'deactivate', $network_wide );
 	}
 
