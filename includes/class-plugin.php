@@ -177,7 +177,7 @@ class Example_Plugin {
 		load_plugin_textdomain(
 			'example-plugin',
 			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages'
+			dirname( plugin_basename( $this->file ) ) . '/languages'
 		);
 	}
 
