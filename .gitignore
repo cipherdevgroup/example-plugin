@@ -12,13 +12,16 @@ tmp/
 
 # Auto-Generated Files
 js/*
-!js/src/**/*
 css/*
-!css/src/**/*
 images/*
+!js/src/*
+!js/src/**/*
+!css/src/*
+!css/src/**/*
+!images/src/*
 !images/src/**/*
 
 # Third-party dependencies
-includes/vendor/
-js/vendor/
-css/vendor/
+includes/vendor/*
+js/vendor/*
+css/vendor/*
