@@ -2,8 +2,8 @@
 
 Contributors: fatmedia, wpsitecare
 Tags: cool stuff
-Requires at least: 4.1
-Tested up to: 4.2.2
+Requires at least: 4.3
+Tested up to: 4.3
 Stable tag: 0.2.0
 License: MIT
 
