@@ -72,16 +72,44 @@ module.exports = {
 		]
 	},
 	bowerfonts: {
+		files: []
+	},
+	rename: {
 		files: [
 			{
 				expand: true,
-				flatten: true,
-				cwd: 'bower_components/',
-				src: [],
-				dest: '<%= paths.fontSrc %>icons/',
+				dot: true,
+				cwd: '',
+				dest: '',
+				src: [
+					'example-plugin.php'
+				],
 				rename: function( dest, src ) {
-					'use strict';
-					return dest + '/' + src.replace( 'themicons_', '' );
+					return dest + src.replace( 'example-plugin', '<%= pkg.nameDashed %>' );
+				}
+			},
+			{
+				expand: true,
+				dot: true,
+				cwd: '<%= paths.jsSrc %>',
+				dest: '<%= paths.jsSrc %>',
+				src: [
+					'**/*.js'
+				],
+				rename: function( dest, src ) {
+					return dest + src.replace( 'examplePlugin', '<%= pkg.nameCamelLow %>' );
+				}
+			},
+			{
+				expand: true,
+				dot: true,
+				cwd: '<%= paths.cssSrc %>',
+				dest: '<%= paths.cssSrc %>',
+				src: [
+					'**/*.scss'
+				],
+				rename: function( dest, src ) {
+					return dest + src.replace( 'example-plugin', '<%= pkg.nameDashed %>' );
 				}
 			}
 		]
