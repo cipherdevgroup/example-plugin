@@ -2,7 +2,7 @@
 /**
  * Build and store references to our plugin objects.
  *
- * @package   WPSiteCare/ExamplePlugin
+ * @package   ExamplePlugin
  * @copyright Copyright (c) 2015, WP Site Care
  * @license   MIT
  * @since     0.1.0
