@@ -7,19 +7,8 @@ module.exports = {
 				flatten: true,
 				cwd: '<%= paths.tmp %>',
 				src: [
-					'<%= pkg.nameDashed %>*.css',
-					'<%= pkg.nameDashed %>*.map'
-				],
-				dest: '',
-				filter: 'isFile'
-			},
-			{
-				expand: true,
-				flatten: true,
-				cwd: '<%= paths.tmp %>',
-				src: [
-					'admin-<%= pkg.nameDashed %>*.css',
-					'admin-<%= pkg.nameDashed %>*.map'
+					'*.css',
+					'**/*.css'
 				],
 				dest: 'css/',
 				filter: 'isFile'
