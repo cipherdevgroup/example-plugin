@@ -2,7 +2,7 @@
 /**
  * Example Plugin main plugin class.
  *
- * @package   WPSiteCare/ExamplePlugin
+ * @package   ExamplePlugin
  * @copyright Copyright (c) 2015, WP Site Care
  * @license   MIT
  * @since     0.1.0
@@ -30,7 +30,7 @@ class Example_Plugin {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	private $file = __FILE__;
+	private $file;
 
 	/**
 	 * The plugin's directory path with a trailing slash.
@@ -48,9 +48,25 @@ class Example_Plugin {
 	 */
 	private $url;
 
-	public function __construct() {
-		$this->dir = plugin_dir_path( __FILE__ );
-		$this->url = plugin_dir_url( __FILE__ );
+	/**
+	 * Property for storing the primary plugin options array slug.
+	 *
+	 * @since 0.1.0
+	 * @var   string
+	 */
+	private $options_slug = 'example_plugin_options';
+
+	public function __construct( $args ) {
+		if ( ! isset( $args['file'] ) ) {
+			return _doing_it_wrong(
+				__CLASS__,
+				esc_html__( 'Example plugin must be instantiated with a path to the root plugin file.', 'example-plugin' ),
+				absint( $this->version )
+			);
+		}
+		$this->file = $args['file'];
+		$this->dir  = plugin_dir_path( $this->file );
+		$this->url  = plugin_dir_url( $this->file );
 	}
 
 	/**
@@ -64,10 +80,10 @@ class Example_Plugin {
 	 * @uses   Example_Plugin
 	 * @return object Example_Plugin A single instance of the main plugin class.
 	 */
-	public static function instance() {
+	public static function instance( $args ) {
 		static $instance;
 		if ( null === $instance ) {
-			$instance = new self;
+			$instance = new self( $args );
 		}
 		return $instance;
 	}
@@ -80,7 +96,7 @@ class Example_Plugin {
 	 */
 	public function run() {
 		self::load_textdomain();
-		spl_autoload_register( array( $this, 'autoloader' ) );
+		spl_autoload_register( array( __CLASS__, 'autoloader' ) );
 		self::instantiate( 'Example_Plugin_Factory' );
 	}
 
@@ -129,6 +145,28 @@ class Example_Plugin {
 	}
 
 	/**
+	 * Retrieve the plugin options slug.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return string Example_Plugin::options_slug the plugin options slug
+	 */
+	public function get_options_slug() {
+		return $this->options_slug;
+	}
+
+	/**
+	 * Retrieve the plugin options slug.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return array an array of all the plugin options.
+	 */
+	public function get_options() {
+		return get_option( $this->options_slug, array() );
+	}
+
+	/**
 	 * Loads the plugin language files
 	 *
 	 * @since  0.1.0
@@ -167,6 +205,21 @@ class Example_Plugin {
 	}
 
 	/**
+	 * Build a reference to our default plugin classes.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @return void
+	 */
+	protected function get_classes() {
+		$classes = array();
+		if ( ! is_admin() ) {
+			$classes[] = 'public-scripts';
+		}
+		return $classes;
+	}
+
+	/**
 	 * Store a reference to our classes and get them running.
 	 *
 	 * @since  0.1.0
@@ -174,23 +227,13 @@ class Example_Plugin {
 	 * @param  $factory string the name of our factory class
 	 * @return void
 	 */
-	protected function instantiate( $factory ) {
-		if ( ! is_admin() ) {
-			$factory::build( 'public-scripts' );
-			$factory::get( 'public-scripts' )->run();
+	protected function build( $factory ) {
+		foreach ( $this->get_classes() as $class ) {
+			$object = $factory::get( $class );
+			if ( method_exists( $object, 'run' ) ) {
+				$object->run();
+			}
 		}
-	}
-
-	/**
-	 * Runs on plugin activation to set a default admin content label for all
-	 * existing posts using the post title.
-	 *
-	 * @since  0.1.0
-	 * @access public
-	 * @return void
-	 */
-	public function activate() {
-		// Nothing yet.
 	}
 
 }
