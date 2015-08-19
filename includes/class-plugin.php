@@ -97,7 +97,7 @@ class Example_Plugin {
 	public function run() {
 		self::load_textdomain();
 		spl_autoload_register( array( __CLASS__, 'autoloader' ) );
-		self::instantiate( 'Example_Plugin_Factory' );
+		self::build( 'Example_Plugin_Factory' );
 	}
 
 	/**
