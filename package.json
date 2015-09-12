@@ -41,7 +41,7 @@
     "url":  "https://github.com/wpsitecare/example-plugin.git"
   },
   "devDependencies": {
-    "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config#0.1.2",
+    "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config",
     "load-cedaro-grunt-config": "cedaro/load-cedaro-grunt-config"
   }
 }
