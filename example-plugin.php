@@ -15,8 +15,8 @@
 // Prevent direct access.
 defined( 'ABSPATH' ) || exit;
 
-// Load the main plugin class.
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-autoload.php';
+new Example_Plugin_Autoload( __FILE__ );
 
 add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
 /**
@@ -30,7 +30,12 @@ add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
  * @return object Example_Plugin A single instance of the main plugin class.
  */
 function example_plugin() {
-	return Example_Plugin::instance( array( 'file' => __FILE__ ) );
+	static $plugin;
+	if ( is_null( $plugin ) ) {
+		$plugin = new Example_Plugin_Plugin();
+		$plugin->setup_paths( __FILE__ );
+	}
+	return $plugin;
 }
 
 /**
