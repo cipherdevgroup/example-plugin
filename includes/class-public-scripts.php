@@ -12,7 +12,6 @@
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
-
 	/**
 	 * Hook into WordPress.
 	 *
@@ -122,5 +121,4 @@ class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
 			add_filter( 'example_plugin_load_js',  '__return_false' );
 		}
 	}
-
 }

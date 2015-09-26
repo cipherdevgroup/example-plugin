@@ -12,7 +12,6 @@
 defined( 'ABSPATH' ) || exit;
 
 abstract class Example_Plugin_Scripts {
-
 	/**
 	 * A script prefix to load minified assets on production sites.
 	 *
@@ -78,5 +77,4 @@ abstract class Example_Plugin_Scripts {
 		}
 		return apply_filters( 'example_plugin_enable_packed_js', true );
 	}
-
 }

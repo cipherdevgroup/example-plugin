@@ -12,7 +12,6 @@
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Factory {
-
 	/**
 	 * The saved plugin objects.
 	 *
@@ -68,5 +67,4 @@ class Example_Plugin_Factory {
 		}
 		return self::build( $object, $name, $args );
 	}
-
 }

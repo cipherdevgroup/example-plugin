@@ -12,7 +12,6 @@
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Plugin_Hooks {
-
 	protected $options_slug;
 	protected $options;
 	protected $file;
@@ -191,5 +190,4 @@ class Example_Plugin_Plugin_Hooks {
 		}
 		delete_option( $this->options_slug );
 	}
-
 }
