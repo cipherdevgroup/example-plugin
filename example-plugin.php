@@ -64,7 +64,6 @@ register_activation_hook( __FILE__, 'example_plugin_activate' );
  * @return void
  */
 function example_plugin_activate() {
-	example_plugin()->run();
 	example_plugin_get( 'plugin-hooks' )->activate();
 }
 
@@ -77,7 +76,6 @@ register_deactivation_hook( __FILE__, 'example_plugin_deactivate' );
  * @return void
  */
 function example_plugin_deactivate() {
-	example_plugin()->run();
 	example_plugin_get( 'plugin-hooks' )->deactivate();
 }
 
@@ -90,6 +88,5 @@ register_uninstall_hook( __FILE__, 'example_plugin_uninstall' );
  * @return void
  */
 function example_plugin_uninstall() {
-	example_plugin()->run();
 	example_plugin_get( 'plugin-hooks' )->uninstall();
 }
