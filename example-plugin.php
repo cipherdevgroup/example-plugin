@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name:  Example Plugin
- * Plugin URI:   https://github.com/wpsitecare/example-plugin/
- * Description:  An example plugin for WP Site Care projects.
- * Version:      0.1.0
- * Author:       WP Site Care
- * Author URI:   http://www.wpsitecare.com
- * License:      MIT
- * License URI:  http://wpsitecare.mit-license.org/
- * Text Domain:  example-plugin
- * Domain Path:  /languages
+ * Plugin Name: Example Plugin
+ * Plugin URI:  https://github.com/wpsitecare/example-plugin/
+ * Description: An example plugin for WP Site Care projects.
+ * Version:     0.1.0
+ * Author:      WP Site Care
+ * Author URI:  http://www.wpsitecare.com
+ * License:     MIT
+ * License URI: http://wpsitecare.mit-license.org/
+ * Text Domain: example-plugin
+ * Domain Path: /languages
  */
 
 // Prevent direct access.
@@ -20,14 +20,16 @@ new Example_Plugin_Autoload( __FILE__ );
 
 add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
 /**
- * Access a single instance of the main plugin class. Plugins and themes should
- * use this function to access plugin properties and methods. It's also a good
- * way to check whether or not the plugin is activated.
+ * Access a single instance of the main plugin class.
+ *
+ * Plugins and themes should use this function to access plugin properties and
+ * methods. It's also a simple way to check whether or not the plugin is
+ * currently activated.
  *
  * @since  0.1.0
  * @access public
- * @uses   Example_Plugin
- * @return object Example_Plugin A single instance of the main plugin class.
+ * @uses   Example_Plugin_Plugin
+ * @return object Example_Plugin_Plugin A single instance of the main plugin class.
  */
 function example_plugin() {
 	static $plugin;
@@ -48,8 +50,10 @@ function example_plugin() {
  *
  * <?php example_plugin_get( 'public-scripts' )->maybe_disable(); ?>
  *
- * @since   0.1.0
- * @return  object
+ * @since  0.1.0
+ * @access public
+ * @uses   Example_Plugin_Factory::get()
+ * @return object
  */
 function example_plugin_get( $object, $name = 'canonical', $args = array() ) {
 	return Example_Plugin_Factory::get( $object, $name, $args );
