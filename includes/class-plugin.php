@@ -48,11 +48,24 @@ class Example_Plugin_Plugin {
 	private $url = false;
 
 	/**
+	 * Constructor method.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @param  string $file the path to the root plugin file
+	 * @return void
+	 */
+	public function __construct( $file ) {
+		$this->setup_paths( $file );
+	}
+
+	/**
 	 * Method for setting up the paths used throughout the plugin.
 	 *
 	 * @since  0.1.0
 	 * @access public
-	 * @param  array $args arguments to be passed in via the helper function.
+	 * @param  string $file the path to the root plugin file
+	 * @return void
 	 */
 	public function setup_paths( $file ) {
 		$this->file = $file;
@@ -61,14 +74,14 @@ class Example_Plugin_Plugin {
 	}
 
 	/**
-	 * Set up the widget.
+	 * Build and store references to all the plugin's global objects.
 	 *
-	 * @since 0.1.0
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
 	 */
 	public function run() {
-		if ( $this->file && $this->dir && $this->uri ) {
-			Example_Plugin_Factory::get( 'global-factory' );
-		}
+		Example_Plugin_Factory::get( 'global-factory' );
 	}
 
 	/**
@@ -102,5 +115,21 @@ class Example_Plugin_Plugin {
 	 */
 	public function get_uri( $path = '' ) {
 		return $this->uri . ltrim( $path );
+	}
+
+	/**
+	 * Get a single instance of the main plugin class.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @param  string $file the path to the root plugin file
+	 * @return object Example_Plugin_Plugin
+	 */
+	public static function get_instance( $file ) {
+		static $instance;
+		if ( is_null( $instance ) ) {
+			$instance = new self( $file );
+		}
+		return $instance;
 	}
 }

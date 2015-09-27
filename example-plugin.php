@@ -28,16 +28,11 @@ add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
  *
  * @since  0.1.0
  * @access public
- * @uses   Example_Plugin_Plugin
- * @return object Example_Plugin_Plugin A single instance of the main plugin class.
+ * @uses   Example_Plugin_Plugin::get_instance()
+ * @return object Example_Plugin_Plugin A single instance of the plugin class.
  */
 function example_plugin() {
-	static $plugin;
-	if ( is_null( $plugin ) ) {
-		$plugin = new Example_Plugin_Plugin();
-		$plugin->setup_paths( __FILE__ );
-	}
-	return $plugin;
+	return Example_Plugin_Plugin::get_instance( __FILE__ );
 }
 
 /**
