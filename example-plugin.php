@@ -52,7 +52,7 @@ function example_plugin() {
  *
  * @since  0.1.0
  * @access public
- * @uses   Example_Plugin_Factory::get()
+ * @see    Example_Plugin_Factory::get()
  * @return object
  */
 function example_plugin_get( $object, $name = 'canonical', $args = array() ) {

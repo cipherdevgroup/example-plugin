@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Main plugin class.
  */
-class Example_Plugin {
+class Example_Plugin_Plugin {
 	/**
 	 * Our plugin version number.
 	 *
