@@ -67,7 +67,7 @@ class Example_Plugin_Plugin {
 	 */
 	public function run() {
 		if ( $this->file && $this->dir && $this->uri ) {
-			$this->build();
+			Example_Plugin_Factory::get( 'global-factory' );
 		}
 	}
 
@@ -102,17 +102,5 @@ class Example_Plugin_Plugin {
 	 */
 	public function get_uri( $path = '' ) {
 		return $this->uri . ltrim( $path );
-	}
-
-	/**
-	 * Store a reference to our classes and get them running.
-	 *
-	 * @since  0.1.0
-	 * @access protected
-	 * @param  $factory string the name of our factory class
-	 * @return void
-	 */
-	protected function build() {
-		Example_Plugin_Factory::get( 'global-factory' );
 	}
 }
