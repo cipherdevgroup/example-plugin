@@ -29,7 +29,7 @@ class Example_Plugin_Plugin {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	private $file = false;
+	private $file;
 
 	/**
 	 * The plugin's directory path with a trailing slash.
@@ -37,7 +37,7 @@ class Example_Plugin_Plugin {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	private $dir = false;
+	private $dir;
 
 	/**
 	 * The plugin directory URL with a trailing slash.
@@ -45,7 +45,7 @@ class Example_Plugin_Plugin {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	private $url = false;
+	private $url;
 
 	/**
 	 * Constructor method.
