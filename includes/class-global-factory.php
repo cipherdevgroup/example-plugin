@@ -13,6 +13,14 @@ defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Global_Factory extends Example_Plugin_Factory {
 	/**
+	 * A list of required global plugin object names.
+	 *
+	 * @since 0.1.0
+	 * @var   array
+	 */
+	protected $required = array();
+
+	/**
 	 * Constructor method.
 	 *
 	 * @since  0.1.0
@@ -20,36 +28,6 @@ class Example_Plugin_Global_Factory extends Example_Plugin_Factory {
 	 * @return void
 	 */
 	public function __construct() {
-		$this->build_plugin();
-	}
-
-	/**
-	 * Build an array of global classes to run by default.
-	 *
-	 * @since  0.1.0
-	 * @access protected
-	 * @return array $classes the default plugin classes to be built on init
-	 */
-	protected function get_classes() {
-		return array(
-			'public-scripts',
-		);
-	}
-
-	/**
-	 * Store a reference to our classes and get them running.
-	 *
-	 * @since  0.1.0
-	 * @access public
-	 * @param  $factory string the name of our factory class
-	 * @return void
-	 */
-	public function build_objects() {
-		foreach ( $this->get_classes() as $class ) {
-			$object = self::get( $class );
-			if ( method_exists( $object, 'run' ) ) {
-				$object->run();
-			}
-		}
+		$this->build_required_objects();
 	}
 }

@@ -13,10 +13,18 @@ defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Factory {
 	/**
+	 * A list of required plugin object names.
+	 *
+	 * @since 0.1.0
+	 * @var   array
+	 */
+	protected $required = array();
+
+	/**
 	 * The saved plugin objects.
 	 *
 	 * @since 0.1.0
-	 * @type object
+	 * @var   array
 	 */
 	protected static $objects = array();
 
@@ -66,5 +74,26 @@ class Example_Plugin_Factory {
 			return self::$objects[ $object ][ $name ];
 		}
 		return self::build( $object, $name, $args );
+	}
+
+	/**
+	 * Run and store a reference to objects which are required for the plugin
+	 * to operate.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @param  $factory string the name of our factory class
+	 * @return void
+	 */
+	protected function build_required_objects() {
+		if ( empty( $this->required ) ) {
+			throw new InvalidArgumentException(
+				'No required objects have been defined.'
+			);
+		}
+		foreach ( $this->required as $class ) {
+			$object = self::get( $class );
+			$object->run();
+		}
 	}
 }
