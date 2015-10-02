@@ -13,6 +13,17 @@ defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
 	/**
+	 * Get our class up and running!
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	public function run() {
+		$this->wp_hooks();
+	}
+
+	/**
 	 * Hook into WordPress.
 	 *
 	 * @since  0.1.0
@@ -41,7 +52,7 @@ class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
 		}
 		wp_enqueue_style(
 			'example-plugin',
-			"{$this->url}css/example-plugin{$this->suffix}.css",
+			$this->get_css_uri( "example-plugin{$this->suffix}.css" ),
 			array(),
 			$this->version
 		);
@@ -80,7 +91,7 @@ class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
 	public function load_packed_js() {
 		wp_enqueue_script(
 			'example-plugin',
-			"{$this->url}js/examplePlugin.pkgd{$this->suffix}.js",
+			$this->get_js_uri( "examplePlugin.pkgd{$this->suffix}.js" ),
 			array( 'jquery' ),
 			$this->version,
 			true
@@ -95,12 +106,9 @@ class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
 	 * @return void
 	 */
 	public function load_unpacked_js() {
-		$suffix = $this->suffix;
-		$url    = "{$this->url}js/src/";
-
 		wp_enqueue_script(
 			'example-plugin',
-			"{$url}examplePlugin{$suffix}.js",
+			$this->get_js_uri( "examplePlugin{$this->suffix}.js" ),
 			array( 'jquery' ),
 			$this->version,
 			true
