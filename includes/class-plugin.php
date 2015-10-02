@@ -146,6 +146,17 @@ class Example_Plugin_Plugin {
 	}
 
 	/**
+	 * Return the path to the main plugin file.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function get_file() {
+		return $this->file;
+	}
+
+	/**
 	 * Return the path to the plugin directory with a trailing slash.
 	 *
 	 * @since  0.2.0
