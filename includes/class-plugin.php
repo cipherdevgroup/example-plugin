@@ -40,12 +40,12 @@ class Example_Plugin_Plugin {
 	private $dir;
 
 	/**
-	 * The plugin directory URL with a trailing slash.
+	 * The plugin directory URI with a trailing slash.
 	 *
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	private $url;
+	private $uri;
 
 	/**
 	 * Constructor method.
