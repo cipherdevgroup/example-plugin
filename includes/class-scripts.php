@@ -13,20 +13,12 @@ defined( 'ABSPATH' ) || exit;
 
 abstract class Example_Plugin_Scripts {
 	/**
-	 * A script prefix to load minified assets on production sites.
+	 * A script suffix to load minified assets on production sites.
 	 *
 	 * @since 0.1.0
 	 * @var   string
 	 */
 	protected $suffix;
-
-	/**
-	 * The plugin's root URL with a trailing slash.
-	 *
-	 * @since 0.1.0
-	 * @var   string
-	 */
-	protected $url;
 
 	/**
 	 * The current plugin version.
@@ -36,28 +28,14 @@ abstract class Example_Plugin_Scripts {
 	 */
 	protected $version;
 
+	/**
+	 * Constructor method.
+	 *
+	 * @since 0.2.0
+	 */
 	public function __construct() {
 		$this->suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		$this->url     = example_plugin()->get_url();
 		$this->version = example_plugin()->get_version();
-	}
-
-	/**
-	 * Get the class running!
-	 *
-	 * @since  0.1.0
-	 * @access public
-	 * @return void
-	 */
-	public function run() {
-		if ( ! method_exists( $this, 'wp_hooks' ) ) {
-			_doing_it_wrong(
-				'Example_Plugin_Scripts',
-				esc_attr__( 'When extending Example_Plugin_Scripts, you must create a wp_hooks method.', 'example-plugin' )
-			);
-			return;
-		}
-		$this->wp_hooks();
 	}
 
 	/**
@@ -76,5 +54,38 @@ abstract class Example_Plugin_Scripts {
 			return false;
 		}
 		return apply_filters( 'example_plugin_enable_packed_js', true );
+	}
+
+	/**
+	 * Helper function for getting the script `.min` suffix for minified files.
+	 *
+	 * @since  0.2.0
+	 * @access public
+	 * @return string
+	 */
+	public function get_suffix() {
+		return $this->suffix;
+	}
+
+	/**
+	 * Return the path to the plugin JavaScript directory with a trailing slash.
+	 *
+	 * @since  0.2.0
+	 * @access public
+	 * @return string
+	 */
+	public function get_js_uri( $path ) {
+		return example_plugin()->get_uri( 'js/' ) . ltrim( $path );
+	}
+
+	/**
+	 * Return the path to the plugin css directory with a trailing slash.
+	 *
+	 * @since  0.2.0
+	 * @access public
+	 * @return string
+	 */
+	public function get_css_uri( $path ) {
+		return example_plugin()->get_uri( 'css/' ) . ltrim( $path );
 	}
 }
