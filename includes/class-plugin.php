@@ -87,6 +87,16 @@ class Example_Plugin_Plugin {
 	}
 
 	/**
+	 * Include all required procedural code.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @return void
+	 */
+	protected function includes() {
+	}
+
+	/**
 	 * Build and store references to all the plugin's global objects.
 	 *
 	 * @since  0.1.0
@@ -108,6 +118,7 @@ class Example_Plugin_Plugin {
 		do_action( 'example_plugin_before_init', self::VERSION );
 
 		$this->build();
+		$this->includes();
 
 		/**
 		 * Provide reliable access to the plugin's functions and methods after
