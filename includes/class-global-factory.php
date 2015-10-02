@@ -11,7 +11,7 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
 
-class Example_Plugin_Global_Factory {
+class Example_Plugin_Global_Factory extends Example_Plugin_Factory {
 	/**
 	 * Constructor method.
 	 *
@@ -24,13 +24,13 @@ class Example_Plugin_Global_Factory {
 	}
 
 	/**
-	 * Build an array of default classes to run by default.
+	 * Build an array of global classes to run by default.
 	 *
 	 * @since  0.1.0
 	 * @access protected
 	 * @return array $classes the default plugin classes to be built on init
 	 */
-	protected function get_global_classes() {
+	protected function get_classes() {
 		return array(
 			'public-scripts',
 		);
@@ -44,8 +44,8 @@ class Example_Plugin_Global_Factory {
 	 * @param  $factory string the name of our factory class
 	 * @return void
 	 */
-	public function build_plugin() {
-		foreach ( $this->get_global_classes() as $class ) {
+	public function build_objects() {
+		foreach ( $this->get_classes() as $class ) {
 			$object = self::get( $class );
 			if ( method_exists( $object, 'run' ) ) {
 				$object->run();
