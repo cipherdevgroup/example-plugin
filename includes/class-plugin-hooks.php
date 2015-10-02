@@ -12,14 +12,14 @@
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Plugin_Hooks {
-	protected $options_slug;
 	protected $options;
+	protected $options_data;
 	protected $file;
 	protected $plugin;
 
 	public function __construct() {
-		$this->options_slug = example_plugin()->get_options_slug();
-		$this->options      = example_plugin()->get_options();
+		$this->options      = example_plugin_get( 'options' );
+		$this->options_data = $this->options->get_options();
 		$this->file         = example_plugin()->get_file();
 		$this->plugin       = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
 	}
@@ -68,7 +68,7 @@ class Example_Plugin_Plugin_Hooks {
 	 * @param  bool $network_wide True if superadmin uses "Network Deactivate".
 	 * @return void
 	 */
-	public function deactivate( $network_wide  = false ) {
+	public function deactivate( $network_wide = false ) {
 		$this->handle_action( 'deactivate', $network_wide );
 	}
 
@@ -128,7 +128,7 @@ class Example_Plugin_Plugin_Hooks {
 	 * @return array $setup an array of default plugin setup options.
 	 */
 	protected function setup_options() {
-		$current = $this->options;
+		$current = $this->options_data;
 		$version = isset( $current['version'] ) ? $current['version'] : false;
 		$setup = array(
 			'is_installed' => true,
@@ -139,9 +139,6 @@ class Example_Plugin_Plugin_Hooks {
 		}
 		$setup['version'] = example_plugin()->get_version();
 
-		if ( empty( $current ) ) {
-			add_option( $this->options_slug, $setup, '', 'no' );
-		}
 		return $setup;
 	}
 
@@ -158,9 +155,13 @@ class Example_Plugin_Plugin_Hooks {
 		}
 		check_admin_referer( "activate-plugin_{$this->plugin}" );
 
-		$updated = $this->setup_options();
+		$setup = $this->setup_options();
 
-		update_option( $this->options_slug, $updated );
+		if ( $this->options->add_options( $setup ) ) {
+			return true;
+		}
+
+		return $this->options->set_options( $setup );
 	}
 
 	/**
@@ -188,6 +189,6 @@ class Example_Plugin_Plugin_Hooks {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
-		delete_option( $this->options_slug );
+		$this->options->delete_options();
 	}
 }
