@@ -38,6 +38,7 @@ module.exports = function() {
 		'build:js': [
 			'build:dependencies:js',
 			'newer:concat:js',
+			'newer:concat:adminjs',
 			'newer:uglify'
 		]
 	};
