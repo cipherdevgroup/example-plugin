@@ -18,7 +18,9 @@ class Example_Plugin_Global_Factory extends Example_Plugin_Factory {
 	 * @since 0.1.0
 	 * @var   array
 	 */
-	protected $required = array();
+	protected $required = array(
+		'language-loader',
+	);
 
 	/**
 	 * Constructor method.
