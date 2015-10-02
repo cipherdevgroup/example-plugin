@@ -77,6 +77,19 @@ class Example_Plugin_Plugin {
 	 * Build and store references to all the plugin's global objects.
 	 *
 	 * @since  0.1.0
+	 * @access protected
+	 * @return void
+	 */
+	protected function build() {
+		Example_Plugin_Factory::get( 'admin-factory' );
+		Example_Plugin_Factory::get( 'global-factory' );
+		Example_Plugin_Factory::get( 'public-factory' );
+	}
+
+	/**
+	 * Build and store references to all the plugin's global objects.
+	 *
+	 * @since  0.1.0
 	 * @access public
 	 * @return void
 	 */
@@ -94,7 +107,7 @@ class Example_Plugin_Plugin {
 		 */
 		do_action( 'example_plugin_before_init', self::VERSION );
 
-		Example_Plugin_Factory::get( 'global-factory' );
+		$this->build();
 
 		/**
 		 * Provide reliable access to the plugin's functions and methods after
