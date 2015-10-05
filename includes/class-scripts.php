@@ -31,7 +31,7 @@ abstract class Example_Plugin_Scripts {
 	/**
 	 * Constructor method.
 	 *
-	 * @since 0.2.0
+	 * @since 0.1.0
 	 */
 	public function __construct() {
 		$this->suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
@@ -59,7 +59,7 @@ abstract class Example_Plugin_Scripts {
 	/**
 	 * Helper function for getting the script `.min` suffix for minified files.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return string
 	 */
@@ -70,7 +70,7 @@ abstract class Example_Plugin_Scripts {
 	/**
 	 * Return the path to the plugin JavaScript directory with a trailing slash.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return string
 	 */
@@ -81,7 +81,7 @@ abstract class Example_Plugin_Scripts {
 	/**
 	 * Return the path to the plugin css directory with a trailing slash.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return string
 	 */

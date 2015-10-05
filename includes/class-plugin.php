@@ -137,7 +137,7 @@ class Example_Plugin_Plugin {
 	/**
 	 * Getter method for reading the protected version variable.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return bool
 	 */
@@ -159,7 +159,7 @@ class Example_Plugin_Plugin {
 	/**
 	 * Return the path to the plugin directory with a trailing slash.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return string
 	 */
@@ -170,7 +170,7 @@ class Example_Plugin_Plugin {
 	/**
 	 * Return the URI to the plugin directory with a trailing slash.
 	 *
-	 * @since  0.2.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return string
 	 */
