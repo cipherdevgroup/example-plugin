@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-autoload.php';
 new Example_Plugin_Autoload( __FILE__ );
 
-add_action( 'plugins_loaded', array( example_plugin(), 'run' ) );
+add_action( 'plugins_loaded', array( example_plugin(), 'init' ) );
 /**
  * Access a single instance of the main plugin class.
  *

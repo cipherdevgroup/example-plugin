@@ -103,7 +103,7 @@ class Example_Plugin_Plugin {
 	 * @access public
 	 * @return void
 	 */
-	public function run() {
+	public function init() {
 		/**
 		 * Provide reliable access to the plugin's functions and methods before
 		 * the plugin's global classes are initialized.
