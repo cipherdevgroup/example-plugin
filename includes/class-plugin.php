@@ -2,13 +2,14 @@
 /**
  * Example Plugin main plugin class.
  *
- * @package   ExamplePlugin
- * @copyright Copyright (c) 2015, WP Site Care
- * @license   MIT
- * @since     0.1.0
+ * @package    ExamplePlugin
+ * @subpackage ExamplePlugin\Classes
+ * @author     Robert Neu
+ * @copyright  Copyright (c) 2016, WP Site Care
+ * @license    MIT
+ * @since      0.1.0
  */
 
-// Prevent direct access.
 defined( 'ABSPATH' ) || exit;
 
 /**

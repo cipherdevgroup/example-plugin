@@ -2,13 +2,14 @@
 /**
  * Load all public-facing scripts for the plugin.
  *
- * @package   ExamplePlugin
- * @copyright Copyright (c) 2015, WP Site Care
- * @license   MIT
- * @since     0.1.0
+ * @package    ExamplePlugin
+ * @subpackage ExamplePlugin\Classes
+ * @author     Robert Neu
+ * @copyright  Copyright (c) 2016, WP Site Care
+ * @license    MIT
+ * @since      0.1.0
  */
 
-// Prevent direct access.
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Public_Scripts extends Example_Plugin_Scripts {
