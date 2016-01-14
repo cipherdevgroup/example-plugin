@@ -2,26 +2,83 @@
 /**
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
- * @package   ExamplePlugin
- * @copyright Copyright (c) 2015, WP Site Care
- * @license   MIT
- * @since     0.1.0
+ * @package    ExamplePlugin
+ * @subpackage ExamplePlugin\Classes
+ * @author     Robert Neu
+ * @copyright  Copyright (c) 2016, WP Site Care
+ * @license    MIT
+ * @since      0.1.0
  */
 
-// Prevent direct access.
 defined( 'ABSPATH' ) || exit;
 
 class Example_Plugin_Plugin_Hooks {
-	protected $options;
-	protected $options_data;
+	/**
+	 * The absolute path to the root plugin file.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @var    string
+	 */
 	protected $file;
-	protected $plugin;
 
+	/**
+	 * The slug of the plugin being activated, deactivated, or uninstalled.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $plugin = '';
+
+	/**
+	 * Set up class properties.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
 	public function __construct() {
-		$this->options      = example_plugin_get( 'options' );
-		$this->options_data = $this->options->get_options();
-		$this->file         = example_plugin()->get_file();
-		$this->plugin       = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
+		$this->file   = wp_conference()->get_file();
+		if ( isset( $_REQUEST['plugin'] ) ) {
+			$this->plugin = sanitize_key( wp_unslash( $_REQUEST['plugin'] ) );
+		}
+	}
+
+	/**
+	 * Get all blog ids of blogs in the current network which are not
+	 * archived, spam, or deleted.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @return array|false The blog ids, false if no matches.
+	 */
+	protected function get_blog_ids() {
+		global $wpdb;
+		// Get an array of blog ids.
+		$sql = "SELECT blog_id FROM $wpdb->blogs
+			WHERE archived = '0' AND spam = '0'
+			AND deleted = '0'";
+
+		return $wpdb->get_col( $sql );
+	}
+
+	/**
+	 * Fired when a new site is activated with a WPMU environment.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @param  int $blog_id ID of the new blog.
+	 * @return void
+	 */
+	public function activate_new_site( $blog_id ) {
+		if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
+			return;
+		}
+
+		switch_to_blog( $blog_id );
+		$this->single_activate();
+		restore_current_blog();
 	}
 
 	/**
@@ -29,14 +86,16 @@ class Example_Plugin_Plugin_Hooks {
 	 *
 	 * @since  0.1.0
 	 * @access public
-	 * @param  bool $network_wide True if superadmin uses a "Network" action.
+	 * @param  string $action the plugin hook action to be handled.
+	 * @param  bool   $network_wide True if super admin uses a "Network" action.
 	 * @return void
 	 */
 	protected function handle_action( $action, $network_wide ) {
 		$method = "single_{$action}";
 		if ( is_multisite() ) {
 			if ( ! $network_wide ) {
-				return $this->$method();
+				$this->$method();
+				return;
 			}
 			foreach ( $this->get_blog_ids() as $blog_id ) {
 				switch_to_blog( $blog_id );
@@ -84,42 +143,6 @@ class Example_Plugin_Plugin_Hooks {
 	}
 
 	/**
-	 * Fired when a new site is activated with a WPMU environment.
-	 *
-	 * @since  0.1.0
-	 * @access public
-	 * @param  int $blog_id ID of the new blog.
-	 * @return void
-	 */
-	public function activate_new_site( $blog_id ) {
-		if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
-			return;
-		}
-
-		switch_to_blog( $blog_id );
-		$this->single_activate();
-		restore_current_blog();
-	}
-
-	/**
-	 * Get all blog ids of blogs in the current network which are not
-	 * archived, spam, or deleted.
-	 *
-	 * @since  0.1.0
-	 * @access protected
-	 * @return array|false The blog ids, false if no matches.
-	 */
-	protected function get_blog_ids() {
-		global $wpdb;
-		// get an array of blog ids
-		$sql = "SELECT blog_id FROM $wpdb->blogs
-			WHERE archived = '0' AND spam = '0'
-			AND deleted = '0'";
-
-		return $wpdb->get_col( $sql );
-	}
-
-	/**
 	 * Set up the plugin's base options and store some data which may be useful
 	 * on upgrade.
 	 *
@@ -128,7 +151,7 @@ class Example_Plugin_Plugin_Hooks {
 	 * @return array $setup an array of default plugin setup options.
 	 */
 	protected function setup_options() {
-		$current = $this->options_data;
+		$current = example_plugin_get( 'options' )->get_options();
 		$version = isset( $current['version'] ) ? $current['version'] : false;
 		$setup = array(
 			'is_installed' => true,
@@ -157,11 +180,11 @@ class Example_Plugin_Plugin_Hooks {
 
 		$setup = $this->setup_options();
 
-		if ( $this->options->add_options( $setup ) ) {
+		if ( example_plugin_get( 'options' )->add_options( $setup ) ) {
 			return true;
 		}
 
-		return $this->options->set_options( $setup );
+		return example_plugin_get( 'options' )->set_options( $setup );
 	}
 
 	/**
@@ -189,6 +212,6 @@ class Example_Plugin_Plugin_Hooks {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
-		$this->options->delete_options();
+		example_plugin_get( 'options' )->delete_options();
 	}
 }
