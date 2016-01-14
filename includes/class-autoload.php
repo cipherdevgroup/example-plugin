@@ -24,13 +24,23 @@ class Example_Plugin_Autoload {
 	/**
 	 * Constructor method.
 	 *
-	 * @since 0.1.0
+	 * @since  0.1.0
+	 * @access public
+	 * @param  string $file the absolute path to the plugin's root file.
+	 * @return void
 	 */
 	public function __construct( $file ) {
 		$this->dir = plugin_dir_path( $file );
 		$this->register_autoloaders();
 	}
 
+	/**
+	 * Register all of our autoloaders.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @return void
+	 */
 	protected function register_autoloaders() {
 		spl_autoload_register( array( $this, 'autoloader' ) );
 		spl_autoload_register( array( $this, 'admin_autoloader' ) );
@@ -41,8 +51,8 @@ class Example_Plugin_Autoload {
 	 *
 	 * @since  0.1.0
 	 * @access protected
-	 * @param  string $class the name of the class to replace
-	 * @param  string $prefix an optional prefix to replace in the class name
+	 * @param  string $class the name of the class to replace.
+	 * @param  string $prefix an optional prefix to replace in the class name.
 	 * @return string
 	 */
 	protected function format_class( $class, $prefix = '' ) {
@@ -54,8 +64,8 @@ class Example_Plugin_Autoload {
 	 *
 	 * @since  0.1.0
 	 * @access protected
-	 * @param  string $path the relative path to the file to be formatted
-	 * @param  string $file the slug of the file to be formatted
+	 * @param  string $path the relative path to the file to be formatted.
+	 * @param  string $file the slug of the file to be formatted.
 	 * @return string the formatted path to a file
 	 */
 	protected function build_file( $path, $file ) {
@@ -67,6 +77,7 @@ class Example_Plugin_Autoload {
 	 *
 	 * @since  0.1.0
 	 * @access protected
+	 * @param  string $file the absolute path of the file to be required.
 	 * @return bool true if a file is loaded, false otherwise
 	 */
 	protected function require_file( $file ) {
@@ -82,7 +93,8 @@ class Example_Plugin_Autoload {
 	 *
 	 * @since  0.1.0
 	 * @access protected
-	 * @return bool true if a file is loaded, false otherwise
+	 * @param  string $class The name of the class to be autoloaded.
+	 * @return bool true if a file is loaded, false otherwise.
 	 */
 	protected function autoloader( $class ) {
 		return $this->require_file(
@@ -95,7 +107,8 @@ class Example_Plugin_Autoload {
 	 *
 	 * @since  0.1.0
 	 * @access protected
-	 * @return bool true if a file is loaded, false otherwise
+	 * @param  string $class The name of the class to be autoloaded.
+	 * @return bool true if a file is loaded, false otherwise.
 	 */
 	protected function admin_autoloader( $class ) {
 		if ( false === strpos( $class, 'Admin' ) ) {
