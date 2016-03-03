@@ -19,80 +19,49 @@
  * @since      0.1.0
  */
 
-// Prevent direct access.
-defined( 'ABSPATH' ) || exit;
-
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-autoload.php';
-new Example_Plugin_Autoload( __FILE__ );
-
-add_action( 'plugins_loaded', array( example_plugin(), 'init' ) );
 /**
- * Access a single instance of the main plugin class.
+ * The current version of the plugin.
  *
- * Plugins and themes should use this function to access plugin properties and
- * methods. It's also a simple way to check whether or not the plugin is
- * currently activated.
+ * @since 0.1.0
+ */
+define( 'EXAMPLE_PLUGIN_VERSION', '0.1.0' );
+
+/**
+ * The current version of the parent theme. Should match the version in style.css.
+ *
+ * @since 0.1.0
+ */
+define( 'EXAMPLE_PLUGIN_FILE', __FILE__ );
+
+/**
+ * The absolute path to the plugin's root directory with a trailing slash.
+ *
+ * @since 0.1.0
+ * @uses  plugin_dir_path()
+ */
+define( 'EXAMPLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
+/**
+ * The absolute path to the plugin's root directory with a trailing slash.
+ *
+ * @since 0.1.0
+ * @uses  plugin_dir_url()
+ */
+define( 'EXAMPLE_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
+
+require_once EXAMPLE_PLUGIN_DIR . 'includes/plugin-hooks/init.php';
+require_once EXAMPLE_PLUGIN_DIR . 'includes/language.php';
+require_once EXAMPLE_PLUGIN_DIR . 'includes/options.php';
+require_once EXAMPLE_PLUGIN_DIR . 'includes/scripts.php';
+
+add_action( 'plugins_loaded', 'example_plugin' );
+/**
+ * Fire all of the actions, filters, and any other functionality kickoff methods.
  *
  * @since  0.1.0
  * @access public
- * @uses   Example_Plugin_Plugin::get_instance()
- * @return object Example_Plugin_Plugin A single instance of the plugin class.
+ * @return void
  */
 function example_plugin() {
-	return Example_Plugin_Plugin::get_instance( __FILE__ );
-}
-
-/**
- * Grab an instance of one of the plugin class objects.
- *
- * If you need to reference a method in one of the plugin classes, you should
- * typically do it using this function.
- *
- * Example:
- *
- * <?php example_plugin_get( 'public-scripts' )->maybe_disable(); ?>
- *
- * @since  0.1.0
- * @access public
- * @see    Example_Plugin_Factory::get()
- * @return object
- */
-function example_plugin_get( $object, $name = 'canonical', $args = array() ) {
-	return Example_Plugin_Factory::get( $object, $name, $args );
-}
-
-register_activation_hook( __FILE__, 'example_plugin_activate' );
-/**
- * Set up roles, options and required data on plugin activation.
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-function example_plugin_activate() {
-	example_plugin_get( 'plugin-hooks' )->activate();
-}
-
-register_deactivation_hook( __FILE__, 'example_plugin_deactivate' );
-/**
- * Remove unnecessary data on plugin deactivation.
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-function example_plugin_deactivate() {
-	example_plugin_get( 'plugin-hooks' )->deactivate();
-}
-
-register_uninstall_hook( __FILE__, 'example_plugin_uninstall' );
-/**
- * Clean up all leftover roles, options, and data on plugin removal.
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-function example_plugin_uninstall() {
-	example_plugin_get( 'plugin-hooks' )->uninstall();
+	require_once EXAMPLE_PLUGIN_DIR . 'includes/init.php';
 }
