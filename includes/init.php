@@ -1,9 +1,8 @@
 <?php
 /**
- * Load all public-facing scripts for the plugin.
+ * Kick off all actions, filters, and other functionality initialization.
  *
- * @package    ExamplePlugin
- * @subpackage ExamplePlugin\Classes
+ * @package    ExamplePlugin\Functions\Init
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT

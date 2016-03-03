@@ -1,10 +1,8 @@
 <?php
 /**
- * Load all public-facing scripts for the plugin.
+ * Initialize and register all plugin hooks.
  *
- * @package    ExamplePlugin
- * @subpackage ExamplePlugin\Classes
- * @author     Robert Neu
+ * @package    ExamplePlugin\PluginHooks
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT
  * @since      0.1.0

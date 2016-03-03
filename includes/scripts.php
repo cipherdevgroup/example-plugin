@@ -2,9 +2,7 @@
 /**
  * Load all public-facing scripts for the plugin.
  *
- * @package    ExamplePlugin
- * @subpackage ExamplePlugin\Classes
- * @author     Robert Neu
+ * @package    ExamplePlugin\Functions\Scripts
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT
  * @since      0.1.0

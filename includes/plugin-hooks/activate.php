@@ -3,7 +3,6 @@
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
  * @package    ExamplePlugin\PluginHooks
- * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT
  * @since      0.1.0

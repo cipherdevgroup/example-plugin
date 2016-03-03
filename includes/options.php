@@ -2,9 +2,7 @@
 /**
  * A class for getting and setting the primary plugin options data.
  *
- * @package    ExamplePlugin
- * @subpackage ExamplePlugin\Classes
- * @author     Robert Neu
+ * @package    ExamplePlugin\Functions\Options
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT
  * @since      0.1.0
