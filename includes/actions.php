@@ -1,6 +1,6 @@
 <?php
 /**
- * Load all public-facing scripts for the plugin.
+ * All default actions for the plugin.
  *
  * @package    ExamplePlugin\
  * @copyright  Copyright (c) 2016, WP Site Care

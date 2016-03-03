@@ -1,6 +1,6 @@
 <?php
 /**
- * Load all public-facing scripts for the plugin.
+ * Functions for loading plugin scripts and styles.
  *
  * @package    ExamplePlugin\Functions\Scripts
  * @copyright  Copyright (c) 2016, WP Site Care

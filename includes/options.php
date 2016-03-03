@@ -1,6 +1,6 @@
 <?php
 /**
- * A class for getting and setting the primary plugin options data.
+ * Functions for getting and setting plugin options data.
  *
  * @package    ExamplePlugin\Functions\Options
  * @copyright  Copyright (c) 2016, WP Site Care

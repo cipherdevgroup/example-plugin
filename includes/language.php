@@ -1,6 +1,6 @@
 <?php
 /**
- * Load translations for the plugin.
+ * Functions to load translations for the plugin.
  *
  * @package    ExamplePlugin\Functions\Languages
  * @copyright  Copyright (c) 2016, WP Site Care
