@@ -1,7 +1,7 @@
 // https://github.com/sindresorhus/grunt-sass
 module.exports = {
 	options: {
-		sourceMap: false,
+		sourceMap: true,
 		lineNumbers: false,
 		outputStyle: 'expanded'
 	},
