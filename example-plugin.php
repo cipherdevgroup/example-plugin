@@ -17,6 +17,8 @@
  * @since      0.1.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * The current version of the plugin.
  *
