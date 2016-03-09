@@ -10,11 +10,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-require_once EXAMPLE_PLUGIN_DIR . 'includes/plugin-hooks/common.php';
-require_once EXAMPLE_PLUGIN_DIR . 'includes/plugin-hooks/activate.php';
-require_once EXAMPLE_PLUGIN_DIR . 'includes/plugin-hooks/deactivate.php';
-require_once EXAMPLE_PLUGIN_DIR . 'includes/plugin-hooks/uninstall.php';
-
 /**
  * Callback defined in includes/plugin-hooks/activate.php
  *
