@@ -3,6 +3,7 @@
   "nameSpacedLow": "example plugin",
   "nameDashed":    "example-plugin",
   "nameUscore":    "example_plugin",
+  "nameUscoreUp":  "EXAMPLE_PLUGIN",
   "nameUscoreCam": "Example_Plugin",
   "nameCamel":     "ExamplePlugin",
   "nameCamelLow":  "examplePlugin",

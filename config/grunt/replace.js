@@ -40,6 +40,10 @@ module.exports = {
 					replacement: '<%= pkg.nameUscore %>'
 				},
 				{
+					match: /EXAMPLE_PLUGIN/g,
+					replacement: '<%= pkg.nameUscoreUp %>'
+				},
+				{
 					match: /Example_Plugin/g,
 					replacement: '<%= pkg.nameUscoreCam %>'
 				},
