@@ -30,5 +30,6 @@ function _example_plugin_uninstall() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
+
 	example_plugin_delete_options();
 }

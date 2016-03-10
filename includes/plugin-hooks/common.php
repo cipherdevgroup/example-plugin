@@ -10,23 +10,6 @@
  */
 
 /**
- * Get the plugin request if it exists.
- *
- * @since  0.1.0
- * @access public
- * @return string The plugin request if it exists, an empty string otherwise.
- */
-function _example_plugin_get_plugin_request() {
-	$plugin = '';
-
-	if ( isset( $_REQUEST['plugin'] ) ) {
-		$plugin = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
-	}
-
-	return $plugin;
-}
-
-/**
  * Get all blog ids of blogs in the current network which are not
  * archived, spam, or deleted.
  *

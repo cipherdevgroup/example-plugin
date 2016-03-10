@@ -89,7 +89,5 @@ function _example_plugin_activate() {
 		return;
 	}
 
-	check_admin_referer( 'activate-plugin_' . _example_plugin_get_plugin_request() );
-
 	_example_plugin_activate_add_options( _example_plugin_activate_setup_options() );
 }

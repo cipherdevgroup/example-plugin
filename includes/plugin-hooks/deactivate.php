@@ -31,5 +31,5 @@ function _example_plugin_deactivate() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
-	check_admin_referer( 'deactivate-plugin_' . _example_plugin_get_plugin_request() );
+
 }
