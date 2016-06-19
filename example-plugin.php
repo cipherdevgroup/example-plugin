@@ -56,7 +56,7 @@ require_once EXAMPLE_PLUGIN_DIR . 'includes/scripts.php';
 
 add_action( 'plugins_loaded', 'example_plugin' );
 /**
- * Fire all of the actions, filters, and any other functionality kickoff methods.
+ * Fire all of the actions, filters, and any other functionality kickoffs.
  *
  * @since  0.1.0
  * @access public
@@ -64,4 +64,18 @@ add_action( 'plugins_loaded', 'example_plugin' );
  */
 function example_plugin() {
 	require_once EXAMPLE_PLUGIN_DIR . 'includes/init.php';
+}
+
+add_action( 'plugins_loaded', 'example_plugin_admin' );
+/**
+ * Fire all of the admin actions, filters, and any other functionality kickoffs.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return void
+ */
+function example_plugin_admin() {
+	if ( is_admin() ) {
+		require_once EXAMPLE_PLUGIN_DIR . 'admin/init.php';
+	}
 }
