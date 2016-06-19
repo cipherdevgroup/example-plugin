@@ -31,10 +31,13 @@ function example_plugin_get_suffix() {
  * @return bool
  */
 function _example_plugin_enable_packed_js() {
-	if ( empty( example_plugin_get_suffix() ) ) {
+	$suffix = example_plugin_get_suffix();
+
+	if ( empty( $suffix ) ) {
 		return false;
 	}
-	return apply_filters( 'example_plugin_enable_packed_js', true );
+
+	return (bool) apply_filters( 'example_plugin_enable_packed_js', true );
 }
 
 /**
