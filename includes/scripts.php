@@ -124,18 +124,3 @@ function example_plugin_load_unpacked_js() {
 		true
 	);
 }
-
-/**
- * Remove all required scripts and styles on entries where the user has
- * checked the admin option to disable the lightbox.
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-function example_plugin_maybe_disable() {
-	if ( get_post_meta( get_the_ID(), 'example_plugin_disable', true ) ) {
-		add_filter( 'example_plugin_load_css', '__return_false' );
-		add_filter( 'example_plugin_load_js',  '__return_false' );
-	}
-}

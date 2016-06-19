@@ -23,10 +23,3 @@ add_action( 'wp_enqueue_scripts', 'example_plugin_load_css', 20 );
  * @see example_plugin_load_js
  */
 add_action( 'wp_enqueue_scripts', 'example_plugin_load_js',  20 );
-
-/**
- * Callback defined in includes/scripts.php
- *
- * @see example_plugin_maybe_disable
- */
-add_action( 'wp_enqueue_scripts', 'example_plugin_maybe_disable' );
