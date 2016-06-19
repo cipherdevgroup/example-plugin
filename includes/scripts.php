@@ -16,7 +16,10 @@
  * @return string
  */
 function example_plugin_get_suffix() {
-	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$debug   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
+	$enabled = (bool) apply_filters( 'example_plugin_enable_suffix', ! $debug );
+
+	return $enabled ? '.min' : '';
 }
 
 /**
@@ -54,6 +57,7 @@ function example_plugin_load_css() {
 	if ( ! apply_filters( 'example_plugin_load_css', true ) ) {
 		return;
 	}
+
 	$suffix = example_plugin_get_suffix();
 
 	wp_enqueue_style(
@@ -78,6 +82,7 @@ function example_plugin_load_js() {
 	if ( ! apply_filters( 'example_plugin_load_js', true ) ) {
 		return;
 	}
+
 	if ( _example_plugin_enable_packed_js() ) {
 		example_plugin_load_packed_js();
 	} else {
