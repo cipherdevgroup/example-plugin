@@ -16,10 +16,15 @@
  * @return string
  */
 function example_plugin_get_suffix() {
-	$debug   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
-	$enabled = (bool) apply_filters( 'example_plugin_enable_suffix', ! $debug );
+	static $suffix;
 
-	return $enabled ? '.min' : '';
+	if ( null === $suffix ) {
+		$debug   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
+		$enabled = (bool) apply_filters( 'example_plugin_enable_suffix', ! $debug );
+		$suffix  = $enabled ? '.min' : '';
+	}
+
+	return $suffix;
 }
 
 /**
