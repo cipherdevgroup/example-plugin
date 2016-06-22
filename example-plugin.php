@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'EXAMPLE_PLUGIN_VERSION', '0.1.0' );
 
 /**
- * The current version of the parent theme. Should match the version in style.css.
+ * The absolute path to the root plugin file.
  *
  * @since 0.1.0
  */
