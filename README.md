@@ -9,7 +9,7 @@ __License:__ [MIT](http://wpsitecare.mit-license.org/)
 
 ## Description ##
 
-Example plugin is an example of a plugin.
+Example Plugin is an example of a plugin.
 
 ## Installation ##
 

@@ -7,7 +7,7 @@ Tested up to: 4.3
 Stable tag: 0.1.0
 License: MIT
 
-Example plugin is an example of a plugin.
+Example Plugin is an example of a plugin.
 
 == Description ==
 
