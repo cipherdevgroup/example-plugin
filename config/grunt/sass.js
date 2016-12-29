@@ -7,7 +7,7 @@ module.exports = {
 	},
 	plugin: {
 		files: {
-			'<%= paths.tmp %>example-plugin.css': '<%= paths.cssSrc %>example-plugin.scss'
+			'<%= paths.cssDist %>example-plugin.css': '<%= paths.cssSrc %>example-plugin.scss'
 		}
 	}
 };

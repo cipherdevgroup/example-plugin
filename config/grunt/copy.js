@@ -1,40 +1,18 @@
 // https://github.com/gruntjs/grunt-contrib-copy
 module.exports = {
 	css: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				cwd: '<%= paths.tmp %>',
-				src: [
-					'*.css',
-					'**/*.css'
-				],
-				dest: 'css/',
-				filter: 'isFile'
-			}
-		]
+		files: []
 	},
 	fonts: {
 		files: [
 			{
 				expand: true,
 				flatten: true,
+				cwd: '<%= paths.fontsSrc %>',
 				src: [
-					'<%= paths.fontSrc %>fonts/**/*'
+					'**/*'
 				],
-				dest: 'fonts/'
-			}
-		]
-	},
-	images: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				cwd: '<%= paths.tmp %>images',
-				src: [ '*' ],
-				dest: 'images',
+				dest: '<%= paths.fontsDist %>',
 				filter: 'isFile'
 			}
 		]
@@ -54,9 +32,10 @@ module.exports = {
 		files: [
 			{
 				expand: true,
+				flatten: true,
 				cwd: 'bower_components/',
 				src: [],
-				dest: '<%= paths.cssSrc %>'
+				dest: '<%= paths.cssVend %>'
 			}
 		]
 	},
@@ -66,8 +45,9 @@ module.exports = {
 				expand: true,
 				flatten: true,
 				cwd: 'bower_components/',
-				src: [],
-				dest: '<%= paths.jsSrc %>'
+				src: [
+				],
+				dest: '<%= paths.jsVend %>'
 			}
 		]
 	},
@@ -127,7 +107,10 @@ module.exports = {
 					'!.jshintrc',
 					'!config/**',
 					'!release/**',
-					'!css/src/**',
+					'!<%= paths.cssSrc %>**',
+					'!<%= paths.jsSrc %>**',
+					'!<%= paths.fontsSrc %>**',
+					'!<%= paths.imagesSrc %>**',
 					'!bower_components/**',
 					'!node_modules/**',
 					'!tmp/**',

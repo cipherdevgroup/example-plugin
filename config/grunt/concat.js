@@ -6,13 +6,13 @@ module.exports = {
 			'!<%= paths.jsSrc %>**/*.min.js',
 			'!<%= paths.jsSrc %>admin/**/*'
 		],
-		dest: 'js/<%= pkg.nameCamelLow %>.pkgd.js'
+		dest: '<%= paths.jsDist %><%= pkg.nameCamelLow %>.pkgd.js'
 	},
 	adminjs: {
 		src: [
 			'<%= paths.jsSrc %>admin/**/*.js',
-			'!<%= paths.jsSrc %>**/*.min.js'
+			'!<%= paths.jsSrc %>admin/**/*.min.js'
 		],
-		dest: 'js/<%= pkg.nameCamelLow %>Admin.pkgd.js'
+		dest: '<%= paths.jsDist %><%= pkg.nameCamelLow %>Admin.pkgd.js'
 	}
 };
