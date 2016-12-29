@@ -25,7 +25,7 @@ module.exports = {
 		},
 		src: [
 			'example-plugin.php',
-			'<%= paths.cssSrc %>example-plugin.scss'
+			'<%= paths.cssSrc %>plugin.scss'
 		]
 	}
 };
