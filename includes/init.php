@@ -9,7 +9,7 @@
  * @since      0.1.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'WPINC' ) || die;
 
 /**
  * Provide reliable access to the plugin's functions and methods before
