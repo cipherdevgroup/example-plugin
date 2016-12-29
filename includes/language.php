@@ -2,16 +2,16 @@
 /**
  * Functions to load translations for the plugin.
  *
- * @package    ExamplePlugin\Functions\Languages
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Functions\Languages
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 /**
  * Loads translation file.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return bool true when the file was found, false otherwise.
  */
@@ -26,7 +26,7 @@ function example_plugin_load_textdomain() {
 /**
  * Remove translations from memory.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return bool true if the text domain was loaded, false if it was not.
  */
@@ -37,7 +37,7 @@ function example_plugin_unload_textdomain() {
 /**
  * Whether or not the language has been loaded already.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return bool
  */

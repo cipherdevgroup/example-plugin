@@ -2,16 +2,16 @@
 /**
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
- * @package    ExamplePlugin\Activation
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Activation
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 /**
  * Process activation routines based on how the plugin is activated.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @param  bool $network_wide True if super admin uses "Network Activate".
  * @return void
@@ -23,7 +23,7 @@ function example_plugin_activate( $network_wide = false ) {
 /**
  * Fired when a new site is activated with a WPMU environment.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @param  int $blog_id ID of the new blog.
  * @return void
@@ -42,7 +42,7 @@ function example_plugin_activate_new_site( $blog_id ) {
  * Set up the plugin's base options and store some data which may be useful
  * on upgrade.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @return array $setup an array of default plugin setup options.
  */
@@ -64,7 +64,7 @@ function _example_plugin_activate_setup_options() {
 /**
  * Add or reset the plugin's default options.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @param  array $options The options to be set.
  * @return bool true if options have been set, false otherwise.
@@ -80,7 +80,7 @@ function _example_plugin_activate_add_options( $options ) {
 /**
  * Set up roles, options and required data on plugin activation.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @return void
  */

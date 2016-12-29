@@ -2,10 +2,10 @@
 /**
  * Initialize and register all plugin hooks.
  *
- * @package    ExamplePlugin\Activation
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Activation
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 defined( 'WPINC' ) || die;

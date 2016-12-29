@@ -2,16 +2,16 @@
 /**
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
- * @package    ExamplePlugin\Activation
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Activation
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 /**
  * Process deactivation routines based on how the plugin is deactivated.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @param  bool $network_wide True if super admin uses "Network Deactivate".
  * @return void
@@ -23,7 +23,7 @@ function example_plugin_deactivate( $network_wide = false ) {
 /**
  * Remove unnecessary data on plugin deactivation.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @return void
  */

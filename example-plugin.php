@@ -3,7 +3,7 @@
  * Plugin Name: Example Plugin
  * Plugin URI:  https://github.com/wpsitecare/example-plugin/
  * Description: An example plugin for WP Site Care projects.
- * Version:     0.1.0
+ * Version:     1.0.0
  * Author:      WP Site Care
  * Author URI:  http://www.wpsitecare.com
  * License:     MIT
@@ -11,10 +11,10 @@
  * Text Domain: example-plugin
  * Domain Path: /languages
  *
- * @package    ExamplePlugin
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 defined( 'WPINC' ) || die;
@@ -22,21 +22,21 @@ defined( 'WPINC' ) || die;
 /**
  * The current version of the plugin.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
-define( 'EXAMPLE_PLUGIN_VERSION', '0.1.0' );
+define( 'EXAMPLE_PLUGIN_VERSION', '1.0.0' );
 
 /**
  * The absolute path to the root plugin file.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 define( 'EXAMPLE_PLUGIN_FILE', __FILE__ );
 
 /**
  * The absolute path to the plugin's root directory with a trailing slash.
  *
- * @since 0.1.0
+ * @since 1.0.0
  * @uses  plugin_dir_path()
  */
 define( 'EXAMPLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -44,7 +44,7 @@ define( 'EXAMPLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 /**
  * The absolute path to the plugin's root directory with a trailing slash.
  *
- * @since 0.1.0
+ * @since 1.0.0
  * @uses  plugin_dir_url()
  */
 define( 'EXAMPLE_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
@@ -58,7 +58,7 @@ add_action( 'plugins_loaded', 'example_plugin' );
 /**
  * Fire all of the actions, filters, and any other functionality kickoffs.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -70,7 +70,7 @@ add_action( 'plugins_loaded', 'example_plugin_admin' );
 /**
  * Fire all of the admin actions, filters, and any other functionality kickoffs.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */

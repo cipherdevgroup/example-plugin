@@ -3,17 +3,17 @@
  * Common functionality shared between plugin activation, deactivation, and
  * uninstall hooks.
  *
- * @package    ExamplePlugin\Activation
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Activation
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 /**
  * Get all blog ids of blogs in the current network which are not
  * archived, spam, or deleted.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @return array|false The blog ids, false if no matches.
  */
@@ -30,7 +30,7 @@ function _example_plugin_get_blog_ids() {
 /**
  * Process plugin action routines based on how the action is called.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @param  string $action the plugin hook action to be handled.
  * @param  bool   $network_wide True if super admin uses a "Network" action.

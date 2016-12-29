@@ -2,16 +2,16 @@
 /**
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
- * @package    ExamplePlugin\Activation
- * @copyright  Copyright (c) 2016, WP Site Care
- * @license    MIT
- * @since      0.1.0
+ * @package   ExamplePlugin\Activation
+ * @copyright Copyright (c) 2016, WP Site Care
+ * @license   MIT
+ * @since     1.0.0
  */
 
 /**
  * Clean up all leftover roles, options, and data on plugin removal.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -22,7 +22,7 @@ function example_plugin_uninstall() {
 /**
  * Clean up all leftover roles, options, and data on plugin removal.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access protected
  * @return void
  */
