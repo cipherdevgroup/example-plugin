@@ -2,7 +2,7 @@
 /**
  * Example Plugin activation, deactivation, and uninstall hooks.
  *
- * @package    ExamplePlugin\PluginHooks
+ * @package    ExamplePlugin\Activation
  * @copyright  Copyright (c) 2016, WP Site Care
  * @license    MIT
  * @since      0.1.0
@@ -90,4 +90,17 @@ function _example_plugin_activate() {
 	}
 
 	_example_plugin_activate_add_options( _example_plugin_activate_setup_options() );
+}
+
+/**
+ * Make absolute sure the activation hook has been executed.
+ *
+ * @since  1.0.0
+ * @access protected
+ * @return void
+ */
+function example_plugin_fallback_activate() {
+	if ( EXAMPLE_PLUGIN_VERSION !== example_plugin_get_option( 'version' ) ) {
+		_cookbook_activate( $current_version );
+	}
 }
