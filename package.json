@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config",
-    "load-project-config": "~0.2.0"
+    "load-project-config": "~0.2.1"
   }
 }
