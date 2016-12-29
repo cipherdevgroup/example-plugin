@@ -67,7 +67,7 @@ function example_plugin_load_css() {
 
 	wp_enqueue_style(
 		'example-plugin',
-		EXAMPLE_PLUGIN_URI . "css/example-plugin{$suffix}.css",
+		EXAMPLE_PLUGIN_URI . "css/dist/example-plugin{$suffix}.css",
 		array(),
 		EXAMPLE_PLUGIN_VERSION
 	);
@@ -109,7 +109,7 @@ function example_plugin_load_packed_js() {
 
 	wp_enqueue_script(
 		'example-plugin',
-		EXAMPLE_PLUGIN_URI . "js/examplePlugin.pkgd{$suffix}.js",
+		EXAMPLE_PLUGIN_URI . "js/dist/examplePlugin.pkgd{$suffix}.js",
 		array( 'jquery' ),
 		EXAMPLE_PLUGIN_VERSION,
 		true
@@ -128,7 +128,7 @@ function example_plugin_load_unpacked_js() {
 
 	wp_enqueue_script(
 		'example-plugin',
-		EXAMPLE_PLUGIN_URI . "js/examplePlugin{$suffix}.js",
+		EXAMPLE_PLUGIN_URI . "js/dist/examplePlugin{$suffix}.js",
 		array( 'jquery' ),
 		EXAMPLE_PLUGIN_VERSION,
 		true
