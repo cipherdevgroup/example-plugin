@@ -10,11 +10,3 @@ __License:__ [MIT](http://wpsitecare.mit-license.org/)
 ## Description ##
 
 Example Plugin is an example of a plugin.
-
-## Installation ##
-
-The best way to install this plugin is to either [download a copy](https://wordpress.org/plugins/example-plugin/) from the WordPress.org repository or search for "Example Plugin" from your WordPress admin dashboard.
-
-## Contributing ##
-
-If you're a developer, the most current version can be found on the [develop branch](https://github.com/wpsitecare/example-plugin/tree/develop). Pull requests, issues, and any feedback is more than welcome. If you would like to contribute code, please make your pull requests against the develop branch rather than the master.
