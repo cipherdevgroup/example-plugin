@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialize and register all plugin hooks.
+ * Initialize and register all plugin activation hooks.
  *
  * @package   ExamplePlugin\Activation
  * @copyright Copyright (c) 2016, WP Site Care

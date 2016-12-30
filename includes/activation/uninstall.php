@@ -1,6 +1,6 @@
 <?php
 /**
- * Example Plugin activation, deactivation, and uninstall hooks.
+ * Example Plugin uninstall functions.
  *
  * @package   ExamplePlugin\Activation
  * @copyright Copyright (c) 2016, WP Site Care
