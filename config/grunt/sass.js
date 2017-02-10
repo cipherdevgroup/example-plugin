@@ -6,8 +6,11 @@ module.exports = {
 		outputStyle: 'expanded'
 	},
 	plugin: {
-		files: {
-			'<%= paths.cssDist %>example-plugin.css': '<%= paths.cssSrc %>plugin.scss'
-		}
+		files: [
+			{
+				src: '<%= paths.cssSrc %>plugin.scss',
+				dest: '<%= paths.cssDist %><%= pkg.nameDashed %>.css'
+			}
+		]
 	}
 };
