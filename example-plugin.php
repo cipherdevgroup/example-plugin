@@ -12,7 +12,7 @@
  * Domain Path: /languages
  *
  * @package   ExamplePlugin
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2017, WP Site Care
  * @license   MIT
  * @since     1.0.0
  */

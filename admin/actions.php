@@ -3,7 +3,7 @@
  * All default actions for the plugin.
  *
  * @package   ExamplePlugin\Admin\Actions
- * @copyright Copyright (c) 2016, WP Site Care
+ * @copyright Copyright (c) 2017, WP Site Care
  * @license   MIT
  * @since     1.0.0
  */
