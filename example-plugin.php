@@ -63,7 +63,25 @@ add_action( 'plugins_loaded', 'example_plugin' );
  * @return void
  */
 function example_plugin() {
-	require_once EXAMPLE_PLUGIN_DIR . 'includes/init.php';
+	/**
+	 * Provide reliable access to the plugin's functions and methods before
+	 * the plugin's global actions, filters, and functionality are initialized.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 */
+	do_action( 'example_plugin_before_init' );
+
+	require_once EXAMPLE_PLUGIN_DIR . 'includes/actions.php';
+
+	/**
+	 * Provide reliable access to the plugin's functions and methods after
+	 * the plugin's global actions, filters, and functionality are initialized.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 */
+	do_action( 'example_plugin_after_init' );
 }
 
 add_action( 'plugins_loaded', 'example_plugin_admin' );
@@ -76,6 +94,24 @@ add_action( 'plugins_loaded', 'example_plugin_admin' );
  */
 function example_plugin_admin() {
 	if ( is_admin() ) {
-		require_once EXAMPLE_PLUGIN_DIR . 'admin/init.php';
+		/**
+		 * Provide reliable access to the plugin's functions and methods before
+		 * the plugin's admin actions, filters, and functionality are initialized.
+		 *
+		 * @since  1.0.0
+		 * @access public
+		 */
+		do_action( 'example_plugin_before_admin_init' );
+
+		require_once EXAMPLE_PLUGIN_DIR . 'admin/actions.php';
+
+		/**
+		 * Provide reliable access to the plugin's functions and methods after
+		 * the plugin's admin actions, filters, and functionality are initialized.
+		 *
+		 * @since  1.0.0
+		 * @access public
+		 */
+		do_action( 'example_plugin_after_admin_init' );
 	}
 }
