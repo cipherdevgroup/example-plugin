@@ -103,6 +103,6 @@ function example_plugin_fallback_activate() {
 	$current_version = example_plugin_get_option( 'version' );
 
 	if ( EXAMPLE_PLUGIN_VERSION !== $current_version ) {
-		_cookbook_activate( $current_version );
+		_example_plugin_activate( $current_version );
 	}
 }
