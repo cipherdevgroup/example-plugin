@@ -27,5 +27,13 @@ module.exports = {
 			'example-plugin.php',
 			'<%= paths.cssSrc %>plugin.scss'
 		]
+	},
+	readme: {
+		options: {
+			prefix: 'Stable tag:\\s+'
+		},
+		src: [
+			'readme.txt'
+		]
 	}
 };
