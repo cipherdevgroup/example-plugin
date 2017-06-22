@@ -12,7 +12,10 @@ module.exports = {
 				src: [
 					'plugin.js'
 				],
-				dest: '<%= paths.jsDist %>'
+				dest: '<%= paths.jsDist %>',
+				rename: function( dest, src ) {
+					return dest + src.replace( 'plugin', '<%= pkg.nameCamelLow %>' );
+				}
 			}
 		]
 	},
