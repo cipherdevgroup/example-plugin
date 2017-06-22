@@ -11,27 +11,6 @@
   "copyright":     "2017",
   "license":       "MIT",
   "private":       true,
-  "bugs": {
-    "url":   "http://www.wpsitecare.com/support/",
-    "email": "hello@wpsitecare.com"
-  },
-  "contributors": [
-    {
-      "name": "Robert Neu",
-      "url":  "http://www.wpsitecare.com"
-    },
-    {
-      "name": "WP Site Care",
-      "url":  "http://www.wpsitecare.com"
-    }
-  ],
-  "plugin": {
-    "name":       "Example Plugin",
-    "uri":        "https://github.com/wpsitecare/example-plugin",
-    "author":     "WP Site Care",
-    "license":    "MIT",
-    "licenseuri": "http://wpsitecare.mit-license.org/"
-  },
   "repository": {
     "type": "git",
     "url":  "https://github.com/wpsitecare/example-plugin.git"
