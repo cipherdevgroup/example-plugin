@@ -35,10 +35,10 @@ function _example_plugin_maybe_upgrade( $current_version = false ) {
  *
  * @since  1.0.0
  * @access public
- * @param  bool $network_wide True if super admin uses "Network Activate".
+ * @param  string $current_version The current plugin version.
  * @return void
  */
-function example_plugin_activate( $network_wide = false ) {
+function example_plugin_activate( $current_version = false ) {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
@@ -64,6 +64,6 @@ function example_plugin_fallback_activate() {
 	$current_version = get_option( 'example_plugin_version' );
 
 	if ( EXAMPLE_PLUGIN_VERSION !== $current_version ) {
-		_example_plugin_activate( $current_version );
+		example_plugin_activate( $current_version );
 	}
 }
