@@ -51,7 +51,6 @@ define( 'EXAMPLE_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
 
 require_once EXAMPLE_PLUGIN_DIR . 'includes/activation/init.php';
 require_once EXAMPLE_PLUGIN_DIR . 'includes/language.php';
-require_once EXAMPLE_PLUGIN_DIR . 'includes/options.php';
 require_once EXAMPLE_PLUGIN_DIR . 'includes/scripts.php';
 
 add_action( 'plugins_loaded', 'example_plugin' );
