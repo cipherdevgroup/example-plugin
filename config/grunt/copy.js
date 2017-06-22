@@ -41,32 +41,6 @@ module.exports = {
 			}
 		]
 	},
-	bowercss: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				cwd: 'bower_components/',
-				src: [],
-				dest: '<%= paths.cssVend %>'
-			}
-		]
-	},
-	bowerjs: {
-		files: [
-			{
-				expand: true,
-				flatten: true,
-				cwd: 'bower_components/',
-				src: [
-				],
-				dest: '<%= paths.jsVend %>'
-			}
-		]
-	},
-	bowerfonts: {
-		files: []
-	},
 	rename: {
 		files: [
 			{
@@ -121,12 +95,10 @@ module.exports = {
 					'!config/**',
 					'!assets/**',
 					'!release/**',
-					'!bower_components/**',
 					'!node_modules/**',
 					'!tmp/**',
 					'!*.json',
 					'!*.sublime*',
-					'!.bowerrc',
 					'!.DS_Store',
 					'!.gitattributes',
 					'!.gitignore',

@@ -46,7 +46,6 @@ module.exports = {
 					'.*',
 					'!**/*.{png,ico,jpg,gif}',
 					'!node_modules/**',
-					'!bower_components/**',
 					'!.sass-cache/**',
 					'!release/**',
 					'!logs/**',

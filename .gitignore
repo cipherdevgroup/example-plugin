@@ -3,7 +3,6 @@
 
 # Development files
 node_modules
-bower_components
 
 # Development directories
 release/

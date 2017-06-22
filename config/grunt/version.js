@@ -7,8 +7,7 @@ module.exports = {
 	},
 	project: {
 		src: [
-			'package.json',
-			'bower.json'
+			'package.json'
 		]
 	},
 	phpConstant: {
