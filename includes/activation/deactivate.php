@@ -17,19 +17,7 @@
  * @return void
  */
 function example_plugin_deactivate( $network_wide = false ) {
-	_example_plugin_hooks_handle_action( '_example_plugin_deactivate', $network_wide );
-}
-
-/**
- * Remove unnecessary data on plugin deactivation.
- *
- * @since  1.0.0
- * @access protected
- * @return void
- */
-function _example_plugin_deactivate() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
-
 }

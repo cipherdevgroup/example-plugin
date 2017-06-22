@@ -9,6 +9,28 @@
  */
 
 /**
+ * Upgrade legacy versions of the plugin.
+ *
+ * @since  1.0.0
+ * @access protected
+ * @param  string $current_version The current plugin version.
+ * @return void
+ */
+function _example_plugin_maybe_upgrade( $current_version = false ) {
+	if ( ! $current_version ) {
+		$current_version = get_option( 'example_plugin_version', '1.0.0' );
+	}
+
+	// Upgrade older versions of the plugin.
+	if ( version_compare( $current_version, EXAMPLE_PLUGIN_VERSION, '<' ) ) {
+		// Perform upgrades here.
+	}
+
+	// Reset the version number.
+	update_option( 'example_plugin_version', EXAMPLE_PLUGIN_VERSION, 'no' );
+}
+
+/**
  * Process activation routines based on how the plugin is activated.
  *
  * @since  1.0.0
@@ -17,79 +39,18 @@
  * @return void
  */
 function example_plugin_activate( $network_wide = false ) {
-	_example_plugin_hooks_handle_action( '_example_plugin_activate', $network_wide );
-}
-
-/**
- * Fired when a new site is activated with a WPMU environment.
- *
- * @since  1.0.0
- * @access public
- * @param  int $blog_id ID of the new blog.
- * @return void
- */
-function example_plugin_activate_new_site( $blog_id ) {
-	if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
-		return;
-	}
-
-	switch_to_blog( $blog_id );
-	_example_plugin_activate();
-	restore_current_blog();
-}
-
-/**
- * Set up the plugin's base options and store some data which may be useful
- * on upgrade.
- *
- * @since  1.0.0
- * @access protected
- * @return array $setup an array of default plugin setup options.
- */
-function _example_plugin_activate_setup_options() {
-	$current = example_plugin_get_options();
-	$version = isset( $current['version'] ) ? $current['version'] : false;
-	$options = array(
-		'is_installed' => true,
-	);
-
-	if ( $version ) {
-		$options['updated_from'] = $version;
-	}
-	$options['version'] = EXAMPLE_PLUGIN_VERSION;
-
-	return $options;
-}
-
-/**
- * Add or reset the plugin's default options.
- *
- * @since  1.0.0
- * @access protected
- * @param  array $options The options to be set.
- * @return bool true if options have been set, false otherwise.
- */
-function _example_plugin_activate_add_options( $options ) {
-	if ( example_plugin_add_options( $options ) ) {
-		return true;
-	}
-
-	return example_plugin_set_options( $options );
-}
-
-/**
- * Set up roles, options and required data on plugin activation.
- *
- * @since  1.0.0
- * @access protected
- * @return void
- */
-function _example_plugin_activate() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
 
-	_example_plugin_activate_add_options( _example_plugin_activate_setup_options() );
+	_example_plugin_maybe_upgrade( $current_version );
+
+	/**
+	 * Fires after the plugin has been activated.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'example_plugin_activated' );
 }
 
 /**
@@ -100,7 +61,7 @@ function _example_plugin_activate() {
  * @return void
  */
 function example_plugin_fallback_activate() {
-	$current_version = example_plugin_get_option( 'version' );
+	$current_version = get_option( 'example_plugin_version' );
 
 	if ( EXAMPLE_PLUGIN_VERSION !== $current_version ) {
 		_example_plugin_activate( $current_version );

@@ -10,17 +10,9 @@
 
 defined( 'WPINC' ) || die;
 
-require_once EXAMPLE_PLUGIN_DIR . 'includes/activation/common.php';
 require_once EXAMPLE_PLUGIN_DIR . 'includes/activation/activate.php';
 require_once EXAMPLE_PLUGIN_DIR . 'includes/activation/deactivate.php';
 require_once EXAMPLE_PLUGIN_DIR . 'includes/activation/uninstall.php';
-
-/**
- * Callback defined in includes/activation/activate.php
- *
- * @see example_plugin_activate_new_site
- */
-add_action( 'wpmu_new_blog', 'example_plugin_activate_new_site', 10 );
 
 /**
  * Callback defined in includes/activation/activate.php

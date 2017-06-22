@@ -16,20 +16,7 @@
  * @return void
  */
 function example_plugin_uninstall() {
-	_example_plugin_hooks_handle_action( '_example_plugin_uninstall', true );
-}
-
-/**
- * Clean up all leftover roles, options, and data on plugin removal.
- *
- * @since  1.0.0
- * @access protected
- * @return void
- */
-function _example_plugin_uninstall() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
-
-	example_plugin_delete_options();
 }
