@@ -1,18 +1,18 @@
 {
-  "name": "wpsitecare/example-plugin",
+  "name": "cipherdevgroup/example-plugin",
   "description": "An example plugin.",
   "type": "wordpress-plugin",
-  "homepage" : "http://www.wpsitecare.com",
+  "homepage" : "https://cipherdevelopment.com",
   "license" : "MIT",
   "authors" : [
     {
       "name" : "Robert Neu",
-      "email" : "rob@wpsitecare.com",
-      "homepage" : "http://www.wpsitecare.com"
+      "email" : "rob@cipherdevelopment.com",
+      "homepage" : "https://cipherdevelopment.com"
     }
   ],
   "support" : {
-    "issues" : "https://github.com/wpsitecare/example-plugin/issues"
+    "issues" : "https://github.com/cipherdevgroup/example-plugin/issues"
   },
   "config": {
       "vendor-dir": "includes/vendor"

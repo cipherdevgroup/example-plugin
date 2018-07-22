@@ -1,7 +1,7 @@
 /**
  * Example Plugin Public JavaScript
  *
- * @copyright Copyright (c) 2017, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  */
 ( function( window, $, undefined ) {

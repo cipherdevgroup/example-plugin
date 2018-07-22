@@ -1,6 +1,6 @@
 === Example Plugin ===
 
-Contributors: fatmedia, wpsitecare
+Contributors: fatmedia, cipherdevgroup
 Tags: cool stuff
 Requires at least: 4.7
 Tested up to: 4.7
@@ -13,7 +13,7 @@ Example Plugin is an example of a plugin.
 
 = Contributing =
 
-If you'd like to submit code patches or contribute in any other way, please fork the plugin on GitHub. https://github.com/wpsitecare/example-plugin
+If you'd like to submit code patches or contribute in any other way, please fork the plugin on GitHub. https://github.com/cipherdevgroup/example-plugin
 
 == Screenshots ==
 

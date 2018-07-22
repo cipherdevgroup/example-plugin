@@ -3,7 +3,7 @@
  * Functions for loading plugin scripts and styles.
  *
  * @package   ExamplePlugin\Functions\Scripts
- * @copyright Copyright (c) 2017, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     1.0.0
  */

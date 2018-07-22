@@ -13,10 +13,10 @@
   "private":       true,
   "repository": {
     "type": "git",
-    "url":  "https://github.com/wpsitecare/example-plugin.git"
+    "url":  "https://github.com/cipherdevgroup/example-plugin.git"
   },
   "devDependencies": {
-    "sitecare-plugin-config": "wpsitecare/sitecare-plugin-config",
+    "cipher-plugin-config": "cipherdevgroup/cipher-plugin-config",
     "load-project-config": "~0.2.1"
   }
 }

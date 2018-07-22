@@ -3,7 +3,7 @@
  * Functions to load translations for the plugin.
  *
  * @package   ExamplePlugin\Functions\Languages
- * @copyright Copyright (c) 2017, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     1.0.0
  */

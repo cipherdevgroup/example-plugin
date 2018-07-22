@@ -1,18 +1,18 @@
 <?php
 /**
  * Plugin Name: Example Plugin
- * Plugin URI:  https://github.com/wpsitecare/example-plugin/
- * Description: An example plugin for WP Site Care projects.
+ * Plugin URI:  https://github.com/cipherdevgroup/example-plugin/
+ * Description: An example plugin for Cipher projects.
  * Version:     1.0.0
- * Author:      WP Site Care
- * Author URI:  http://www.wpsitecare.com
+ * Author:      Cipher
+ * Author URI:  https://cipherdevelopment.com
  * License:     MIT
- * License URI: http://wpsitecare.mit-license.org/
+ * License URI: http://mit-license.org/
  * Text Domain: example-plugin
  * Domain Path: /languages
  *
  * @package   ExamplePlugin
- * @copyright Copyright (c) 2017, WP Site Care
+ * @copyright Copyright (c) 2018, Cipher Development, LLC
  * @license   MIT
  * @since     1.0.0
  */

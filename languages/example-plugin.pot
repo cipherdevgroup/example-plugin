@@ -1,16 +1,16 @@
-# Copyright (C) 2017 WP Site Care
+# Copyright (C) 2018 Cipher
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
 "Project-Id-Version: Example Plugin 1.0.0\n"
-"Report-Msgid-Bugs-To: https://www.wpsitecare.com/contact/\n"
-"POT-Creation-Date: 2017-06-22 22:18:36+00:00\n"
+"Report-Msgid-Bugs-To: https://cipherdevelopment.com/contact/\n"
+"POT-Creation-Date: 2018-07-22 15:13:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: WP Site Care <hello@wpsitecare.com>\n"
-"Language-Team: WP Site Care <hello@wpsitecare.com>\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Cipher <hello@cipherdevelopment.com>\n"
+"Language-Team: Cipher <hello@cipherdevelopment.com>\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Country: United States\n"
@@ -22,16 +22,16 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n1.0.0\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
 
 #. Plugin Name of the plugin/theme
 msgid "Example Plugin"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/wpsitecare/example-plugin/"
+msgid "https://github.com/cipherdevgroup/example-plugin/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "An example plugin for WP Site Care projects."
+msgid "An example plugin for Cipher projects."
 msgstr ""
